@@ -1,0 +1,788 @@
+
+[TweenGMX Beta 12]
+
+** DOCUMENTATION IN PROGRESS **
+
+NOTE: With the exception of #0, these notes have now been added to the main TweenGMX Reference Guide:
+	  https://stephenloney.com/_/TweenGMX/Beta_12/TGMX%20Reference.html
+
+#0
+=========================
+ Recent Breaking Changes
+=========================
+	
+	- "Normalized Durations" have been changed.
+		* Structs are now used to enable the feature, not arrays.
+		* The struct can take 1 of 3 different fields for setting the calculation method:
+			1) rate:	-> duration equals the sum of all absolute change values divided by the given rate
+			2) weight:  -> duration is affected by the weighting of property values
+			3) cut:		-> method used in previous betas -- similar to 'rate' but divides the final duration by the number of properties included
+		
+		* The field 'use:' can also be set to specify the amount of properties to include in the calculation.
+			
+		* Examples:
+			// Use 'rate:' to set duration
+			TweenFire(id, "io", 0, true, 0, {rate:50}, "x", 0, 100, "y", 0, 100); // 4 Seconds
+			// Use 'weight:' to set duration
+			TweenFire(id, "io", 0, true, 0, {weight:50}, "x", 0, 100, "y", 0, 100); // 3 Seconds
+			// Use 'cut:" to set duration
+			TweenFire(id, "io", 0, true, 0, {cut:50}, "x", 0, 100, "y", 0, 100); // 2 Seconds
+			// Use only the first 2 properties for duration calculation
+			TweenFire(id, "io", 0, true, 0, {rate:50, use:2}, "x>", 100, "y>", 100, "image_angle", 0, 360); // 4 Seconds
+			
+		* Remember that "Normalized Durations" work slightly different between step and delta timing:
+		
+			STEP:  Amount of change per step (on average)
+			Delta: Amount of change per second (on average)
+		
+	
+	-TweenFinish() now affects delays by default and has 1 required and 3 optional parameters
+		
+		-> TweenFinish(tween[s], [call_event?, finish_delay?, call_delay_event?])
+		* [call_event] and [call_delay_event] are true by default
+		* TweenFinishDelay() still exists for those only wanting to affect delayed tweens
+	
+	
+	- Changed TweenGetDefault() and TweenSetDefault() to TweenDefaultGet() and TweenDefaultSet()
+		* This is for better naming consistency, as TweenGroupGet() and TweenGroupSet() might also become a thing in the future
+		
+	- Changed naming for legacy global "health" and "score" to "health!" and "score!"
+		* This allows instances and structs to now use health and score variable names
+		* Note that self.health and self.score must be used to access values for instances
+
+	- Methods passed to callbacks are now assigned targets
+		* Using the keyword [undefined] as a target will have the method use its original instance/struct environment
+		* Please update any callbacks making use of methods which may be affected -- Make sure intended environment is called
+
+
+#1
+============================
+ Animation Curve Ease Types
+============================		
+		
+	Animation Curves can now be used in the place of easing algorithms:
+	
+		TweenFire(id, CurveIndex, 0, true, 0, 1, "x", 0, 100);
+		
+	Animation Curve channel's can also be used as an ease type:
+	
+		TweenFire(id, CurveChannel, 0, true, 0, 1, "x", 0, 100);
+
+
+#2
+===============
+ Tween From/To 
+===============
+
+	TweenFireTo() and TweenFireFrom() are now obsolete.
+	Instead, the ">" and "<" symbols are to be used with property strings.
+	Here is a comparison between the old and new conventions...
+	
+		// OLD
+		TweenFireTo(id, EaseLinear, 0, 1, 0, 1, "x", mouse_x);
+		// NEW
+		TweenFire(id, EaseLinear, 0, 1, 0, 1, "x>", mouse_x);
+		
+		// OLD
+		TweenFireFrom(id, EaseLinear, 0, 1, 0, 1, "x", mouse_x);
+		// NEW
+		TweenFire(id, EaseLinear, 0, 1, 0, 1, "x<", mouse_x);
+		
+	You can also mix To/From properties in the same function call...
+	
+		TweenFire(id, EaseLinear, 0, 1, 0, 1, "x>", mouse_x, "y<", mouse_y);
+		
+	You can even mix To/From with the standard convention...
+	
+		TweenFire(id, EaseLinear, 0, 1, 0, 1, "x>", mouse_x, "y<", mouse_y, "image_scale", 0, 1);
+		
+	Note that the symbol ":" can *optionally* be used for properties using the 
+	default start/destination convention inorder to help with code clarity...
+	
+		// These both do the same thing
+		TweenFire(id, EaseLinear, 0, 1, 0, 1, "image_scale", 0, 1);
+		TweenFire(id, EaseLinear, 0, 1, 0, 1, "image_scale:", 0, 1);
+		
+		
+#3 
+===================
+ "Off-Rail" Tweens
+===================
+
+	TweenFire()/TweenCreate()/ect. still support the previous convention by default, 
+	but a new optional "off-rail" convention has been added for more control.
+	
+	For example, both of these tweens will do the same thing...
+	
+		// DEFAULT CONVENTION
+		TweenFire(id, EaseLinear, 0, 1, 0, 1, "x", 0, 100);
+		
+		// OFF-RAIL CONVENTION
+		TweenFire("-target", id, "-ease", EaseLinear, "-mode", 0, "-delta", 1, "-delay", 0, "-dur", 1, "x", 0, 100);
+		
+	The off-rail mode might seem worse at first, but it gets better!
+	First, we can remove the tags which have default values we don't need to set,
+	such as "-target", "-mode", and "-delay"...
+	
+		TweenFire("-ease", EaseLinear, "-delta", 1, "-dur", 1, "x", 0, 100);
+		
+	That is better, but we can do even better! We can actually set a global default for "delta" as well...
+	
+		//This only needs to be set once
+		TweenDefaultSet("delta", true);
+		
+		//Tween will now use delta=true as default so we don't have to set it each time
+		TweenFire("-ease", EaseLinear, "-dur", 1, "x", 0, 100);
+		
+	But, we can still go further!
+	Shorthand symbols are also supported for tween parameter tags.
+	So, for example, we can use "~" instead of "-ease"...
+	
+		TweenFire("~", EaseLinear, "-dur", 1, "x", 0, 100);
+		
+	Likewise, we can replace "-dur" with "$" (time is money)
+	
+		TweenFire("~", EaseLinear, "$", 1, "x", 0, 100);
+		
+	Here is a list of shorthand tags supported by TweenFire/TweenCreate/TweenPlay/TweenMore...
+	
+		"?" : "-target"
+		"~" : "-ease"
+		"#" : "-mode"
+		"$" : "-duration" / "-dur"
+		"^" : "-delta"
+		"+" : "-delay"
+		"|" : "-rest"
+		">" : "-continue_count" / "-count" / "-cc"
+		"&" : "-group"
+		"=" : "-time" ***Not to be confused with duration
+		"%" : "-time_amount" / "-amount"
+		"*" : "-time_scale" / "-scale"
+		"!" : "-destroy
+		
+	Now, these shorthand tags also support being condensed with explicit values.
+	So, the example above could be shortened like this...
+	
+		TweenFire("~Linear", "$1", "x", 0, 100);
+	
+	And! Because EaseLinear is actually a tween default, it could even be shortened to just this...
+	
+		TweenFire("$1", "x", 0, 100);
+		
+	If we wanted to make this even shorter, we could use a to ("x>") property...
+	
+		TweenFire("$1", "x>", 100);
+		
+	I hope you are getting the point! The off-rail mode allows you to set only what you need to set.
+	
+	Now, I will cover other supported conventions for shorthand tags.
+	
+	*** Note that upper/lower case and underscores do NOT matter -- inQuad/IN_QUAD/iNqUaD all work the same ***
+	
+	[EASE] Special Shorthand Tags
+	
+		"~linear"
+		
+		*** The SINE algorithm supports additional default shorthand tags... "~i", "~o", "~io", "~in", "~out", "inout" ***
+		
+		"~InSine", "~iSine", "~in", "~i"
+		"~OutSine", "~oSine", "~out", ~o";
+		"~InOutSine", "~ioSine", "~InOut", "~io"
+		
+		"~InQuad", "~iQuad"
+		"~OutQuad", "~oQuad"
+		"~InOutQuad", "~ioQuad"
+		
+		"~InCubic", "~iCubic"
+		"~OutCubic", "~oCubic"
+		"~InOutCubic", "~ioCubic"
+		
+		"~InElastic", "~iElastic"
+		"~OutElastic", "~oElastic"
+		"~InOutElastic", "~ioElastic"
+		
+		etc....
+		
+		Note: 
+			These can also be used in regular "on-rail" tween calls, but remove the prefix "~" -> "ioElastic"
+		
+	[MODE] Special Shorthand Tags
+	
+		"#0", "#o", "#once"
+		"#1", "#b", "#bounce",
+		"#2", "#p", "#patrol",
+		"#3", "#l", "#loop",
+		"#4", "#r", "#repeat
+		
+		Note: 
+			These can also be used in regular "on-rail" tween calls, but remove the prefix "#" -> "patrol"
+		
+	[ADDITONAL] shorthand tags take an explicit value...
+	
+		Delta
+			"^0"  (STEP)
+			"^1"  (DELTA)
+		
+		Delay
+			"+30"
+		
+		Duration
+			"$30"
+		
+		Etc...
+		
+	
+	Now, it is also possible to add CALLBACKS directly to a tween using the "@" shorthand tag.
+	Let's take the previous example and extend it...
+	
+		// CALL FUNCTION 'ShowFireworks' WHEN TWEEN FINISHES
+	
+		// ORIGINAL WAY (STILL VALID!)
+		t = TweenFire("$1", "x>", 100);
+		TweenAddCallback(t, TWEEN_EV_FINISH, id, ShowFireworks);
+	
+		// NEW WAY (OPTIONAL!)
+		TweenFire("$1", "x>", 100, "@finish", ShowFireworks);
+		
+	All callback shorthand tags start with "@". Here is a list of them...
+	(letters in [] are optional)
+	
+		"@finish[ed]" / "@" -- ** Note that "@" is the same as "@finish" **
+		"@continue[d]" 	
+		"@pause[d]"		
+		"@play[ed]"			
+		"@resume[d]"		
+		"@stop[ped]"			
+		"@rest[ed]"			
+		"@resting"		
+		"@reverse[d]"		
+		"@finish[ed]_delay"
+		"@pause[d]_delay"	
+		"@resume[d]_delay"	
+		"@stop[ped]_delay"	
+		
+	If arguments need to be passed to the script, we can pass the callback as an array with additional arguments...
+	
+		// Show yellow fireworks at specific location
+		TweenFire("$1", "x>", 100, "@finish", [ShowFireworks, c_yellow, x, y]);
+		
+		// Note that "@" is the same as "@finish" for extra convenience
+		TweenFire("$1", "x>", 100, "@", [ShowFireworks, c_yellow, x, y]);
+	
+	If you want to set an explicit callback target, you can optionally pass a struct
+	as the first array element assigning a value to the 'target' field...
+	
+		// This will do the same thing as above, except that it will use 'obj_Player' as the calling environment
+		TweenFire("$1", "x>", 100, "@", [{target: obj_Player}, ShowFireworks, c_yellow, x, y]);
+		
+	Additionally, you can also pass 'self' or 'other' as the first array element for assigning the callback target
+		
+		// Use 'other' as the callback target
+		TweenFire("$1", "x>", 100, "@", [other, ShowFireworks, c_yellow, x, y]);
+		
+	The keyword 'undefined' is also valid callback target. This is useful for retaining a method's
+	existing instance/struct calling environment as the callback target.
+	
+		// Call obj_Enemy's 'meth_Explode' method -- 'undefined' retains original calling environment for callback target
+		TweenFire("$1", "x>", 100, "@", [undefined, obj_Enemy.meth_Explode]);
+		
+	If a function ID is used, then 'undefined' will assign the tween's target as the callback target
+	
+		// Use tween's target as the callback target for the 'func_Explode'
+		TweenFire("$1", "-target" obj_Enemy, "x>", 100, "@", [undefined, func_Explode]);
+		
+	If you want a callback to use a specific target environment, you can also use TweenAddCallback() instead.
+	The keyword 'undefined' is likewise supported by TweenAddCallback() as a valid target.
+		
+		
+#4
+==============
+ Tween Select
+==============
+
+	The TWEENS SELECTION functions have been made obsolete. (However, TweensIncludeDeactivated still exists!)
+	
+	First, in addition to 'all', the keywords 'self' and 'other' have been added as a valid tween[s] id where supported.
+	So, for example, here is a comparison between the old way and new way...
+	
+		// PAUSE ALL TWEENS ASSOCIATED WITH THE CALLING TARGET ENVIRONMENT
+	
+		// OLD WAY
+		TweenPause(TweensTarget(id));
+		
+		// NEW WAY
+		TweenPause(self);
+		
+	You can likewise do this with 'other'
+	
+		TweenPause(other);
+		
+	For more advanced selection of tweens, we now use structs with the values 'tween', 'group', or 'target'.
+	Here are some examples...
+	
+		// Pause tweens belonging to group 5
+		TweenPause({group: 5});
+		
+		// Pause tweens associated with group 5 AND target 'id' AND tweenID 'myTween'
+		TweenPause({group: 5, target: id, tween: myTween});
+		
+		// Use arrays to supply more than one value per struct value
+		TweenPause({group:[5,10], target:[id,other.id], tween:[tween1,tween2,tween3]});
+		
+	And, don't forget! You can affect all tweens with the 'all' keyword
+	
+		TweenPause(all);
+	
+
+#5
+====================
+ Continue AND Rest
+====================
+
+	There are 3 play modes which support "countinue counts": 
+
+		PATROL 
+		LOOP
+		REPEAT
+
+	When a tween reaches the start/destination points of the tween,
+	continue counts determine if the tween will continue or finish.
+	By default, countinue counts are infinite (-1).
+	Setting a tween with a 'patrol' mode to a continue count of 1
+	will effectively make it the same as the 'bounce' mode.
+
+	Setting a tween's continue count can be set in these various ways:
+
+		// #1
+		t = TweenFire(id, EaseLinear, "patrol", true, 0, 60, "x", 0, 100);
+		TweenSet(t, "continue_count", 2);
+		
+		// #2 The following all do the same thing...
+		TweenFire("$60", "#patrol", "-continue_count", 2, "x", 0, 100);
+		TweenFire("$60", "#patrol", "-continue", 2, "x", 0, 100);
+		TweenFire("$60", "#patrol", "-cc", 2, "x", 0, 100)
+		TweenFire("$60", "#patrol", ">", 2, "x", 0, 100);		// Use ">" shorthand symbol
+		TweenFire("$60", "#patrol", ">2", "x", 0, 100);			// Use ">2" codensed shorthand
+	
+	It is also possible to set the "rest" for tweens which continue.
+	This is the amount of time a tween will wait before continuing.
+	This value can be set in the following ways...
+
+		// #1
+		t = TweenFire(id, EaseLinear, "patrol", true, 0, 1, "x", 0, 100);
+		TweenSet(t, "rest", 30);
+	
+		// #2
+		TweenFire("$60", "#patrol", "-rest", 30, "x", 0, 100);
+		
+		// The following 2 examples are the same as above but with "|" shorthand rest symbol... one uses "condensed shorthand".
+		TweenFire("$60", "#patrol", "|", 30, "x", 0, 100);
+		TweenFire("$60", "#patrol", "|30", "x", 0, 100);
+	
+	The previous examples will cause the tween to rest for 30 steps before continuing.
+	However, it also possible to have different rest durations for the start/destination points.
+	This can be done by passing the rest parameter as an array...
+
+		TweenFire("$60", "#patrol", "-rest", [30, 120], "x", 0, 100);
+	
+	This example above would cause the tween to rest for 30 steps when reaching
+	the start position, and have it rest for 120 steps when reaching the finish position.
+
+	Now, if using the default form of TweenFire() WITHOUT "going of the rails",
+	you can still easily set these values by passing an array to the delay parameter.
+	The first value is the main tween delay, and the second value the rest duration...
+
+		// Delay = 0, Rest = 30 
+		TweenFire(id, EaseLinear, "patrol", false, [0, 30], 60, "x", 0, 100);
+	
+	To set the rest for the start/dest, a third argument can be passed...
+
+		// Delay = 0, Rest = 30/120
+		TweenFire(id, EaseLinear, "patrol", false, [0, 30, 120], 60, "x", 0, 100);
+	
+	Additionaly, you can also go "off rail" after setting properties
+
+		TweenFire(id, EaseLinear, "patrol", false, 0, 60, "x", 0, 100, "-rest", 30);
+	
+	
+		
+#6
+=====================================
+ Property Start/Destination Strings
+=====================================
+
+	**Please be aware that this feature has limitations which will be explained further on**
+	
+	Start and destination values can now take string arguments which allow for more advanced uses. 
+	For example, the following can be done...
+	
+		TweenFire("$60", "x>", "x+100");
+	
+	The above example will move x to the *current* x position plus 100.
+	Now, this isn't very useful in this case as we, instead, could directly do...
+	
+		TweenFire("$60", "x>", x+100);
+		
+	However, if this tween adds a delay, then the string destination becomes useful.
+	
+		TweenFire("$60", "+30", "x>", "x+100");
+		
+	Now, after the delay finishes, the tween will check the *current* position of x
+	and add 100 to that current value. So, if the target instance is moving around, this
+	method can be used to adjust for a moving x value.
+	
+	There is also a shorthand symbol "@" for extra convenience.
+	The "@" will represent which variable is being tweened.
+	So, we could do this...
+	
+		TweenFire("$60", "+30", "image_scale>", "@*2", "image_angle>", "@+360");
+		
+	In the above example, the "@" symbol will be replaced with "image_scale" and "image_angle" respectively.
+	
+	Additionally, instance variables **from the current calling environment**
+	and global variables can also be used in the string...
+	
+		value = 100;
+		global.gValue = 200;
+		TweenFire("$60", "+30", "x>", "@+value; "y>", "@+gValue");
+		
+	The above example will add 'value' and 'gvalue' to the respective properties.
+	If TweenGMS does not detect an instance variable, it will automatically check
+	for a global variable with the same name. You can still explicitly use global
+	variables by supplying the "global." prefix.
+	
+	You can also reference values from other instances using an object id prefix...
+	
+		TweenFire("$60", "+30", "x>", "obj_SomeDude.x + 100");
+	
+	**NOTE: LOCAL VARIABLES ARE NOT SUPPORTED**
+	
+		// This will cause an error!
+		var _someVar = 100;
+		TweenFire("$60", "+30", "x>", "_someVar+100");
+	
+	Now, the use of string values are quite limited.
+	You can only have 2 values added, subtracted, multiplied, or divided.
+	Some examples...
+			
+			"value+2"
+			"@-value"
+			"value*2"
+			"@/value"
+			
+	In addition to stringed values, you can also use an array to set values relative to
+	the current value of the given property variable. For example...
+	
+		TweenFire("$60", "x>", [100], "y>", [-200]);
+		
+	The above example would move the 'x' right by 100 and 'y' up by 200.
+	This could be the better option when wanting to use local temporary variables to set values.
+	
+	In addition to adjusting for value changes during a delay, this feature could also
+	be useful when using TweenCreate() with TweenPlay().
+
+
+
+#7
+========================
+ TweenJust*() Functions
+========================
+
+	TweenJust*() functions allow you to check when certain tween events JUST happen.
+	Unlike TweenIs*() functions, TweenJust*() functions will only return true for one step.
+	
+		// STEP EVENT
+		
+		// Will only execute once
+		if (TweenJustFinished(tween))
+		{
+			show_debug_message("Tween Finished!");
+		}
+		
+		// Will continue to execute repeatedly until stopped
+		if (TweenIsPlaying(tween))
+		{
+			show_debug_message("Tween is still going...");
+		}
+		
+	These functions can be used as an alternative to Tween Callbacks.
+	
+	The following TweenJust*() functions are avaiable...
+	
+		TweenJustStarted()
+		TweenJustFinished()
+		TweenJustStopped()
+		TweenJustPaused()
+		TweenJustResumed()
+		TweenJustRested()
+		TweenJustContinued()
+		
+	The following TweenIs*() functions are avaiable...
+	
+		TweenIsActive()
+		TweenIsPlaying()
+		TweenIsPaused()
+		TweenIsResting()
+
+
+#8
+=================================================
+ Methods can be used as property setters/getters
+=================================================
+
+	Methods can now be used as property 'setters' and, optionally, 'getters'.
+	We use the function TPFunc() to set them up.
+	
+	-----
+	NOTE: TPFunc() only prepares properties for the given instance/struct.
+	Please use TPFuncShared() if you want all instances/structs to use a global default.
+	-----
+	
+	The first method receives both a 'value' and 'target' argument.
+	You can name these anything you like when passed to the function.
+	
+	The second optional method is used as the 'getter' which receives
+	a target argument. Again, 'target' can be renamed to whatever you like.
+
+	We can use TPFunc() like so...
+	
+		// Create custom property setter which adds a "shake" to the tweened 'x' variable
+		TPFunc(self, "shake_x", 
+				function(value,target) 
+				{	// SETTER -- add random shake to x
+					target.x = value + random_range(-5, 5) 
+				} 
+			  )
+
+		// Fire tween using custom property method "shake_x"
+		TweenFire("$60", "shake_x", x, mouse_x);
+		
+	We can optionally supply our own getter as well by extending the example above...
+		
+		// Create custom method property setter which adds a "shake" to the tweened value
+		TPFunc(self, "shake_x", 
+				function(value,target) { target.x = value + random_range(10) }, // SETTER
+				function(target)	   { return target.x }						// GETTER
+			  )
+
+		// The ">" syntax is now supported because of the 'getter'
+		TweenFire("$60", "shake_x>", mouse_x);
+	
+	TPFunc can also be used directly inside of a tween function like so...
+	
+		// Use TPFunc directly inside tween call
+		TweenFire("$60", TPFunc(self,"myXYZ", function(v,t){ t.xzy = v }), 0, 100);
+		
+		// Additional calls can simply use the previous "myXYZ" string instead of calling TPFunc again.
+		// '0' in the following example points to the previously created tween above.
+		TweenMore(0, "$60", "myXYZ", 0, 100);
+
+
+#9
+============================
+ Ease and Duration Swapping
+============================
+
+	For play modes which continue, different ease algorithms can be applied
+	to the forward and backward motion of the tween.
+	
+		TweenFire("$60", "#patrol", "~", [EaseOutBounce, EaseLinear], "x>", x+200);
+
+	Likewise, different durations can be supplied for the forward and backward motion of a tween...
+	
+		TweenFire("$", [60, 120], "#patrol", "x", 0, 100);
+
+
+#10 
+===================
+ TweenPath Changes	
+===================
+
+	TweenPath() has has been made obsolete and is not split into 2 different functions...
+	
+		TweenEasyPath()
+		TPPath()
+		
+	TweenEasyPath() is very similar to TweenPath() as before, however, it is now designated
+	as an "easy tween" which is meant to be for easiest use.
+	
+	TPPath() can be used inside other Tween functions such as TweenFire().
+	This means that path easing can now be combined with other properties.
+	
+		TweenFire("$60", "image_scale>", "@*2", TPPath(myPath, false), 0, 1);
+
+
+#11 
+==============================
+ Tween Property Modifiers TP*
+==============================
+
+	Tween property modifiers can be used to manipulate tweened values.
+	For example, we can apply a random shake...
+	
+		TweenFire("$60", TPShake("x>", 8), mouse_x);
+		
+	The above example will move 'x' to the mouse_x position while randomly shaking it by value of 8.
+	
+	Other modifiers include...
+	
+		TPRound()
+		TPFloor()
+		TPCeil()
+		TPSnap()
+
+
+#12
+================
+ Lazy Tween IDs
+================
+
+	Previously created tweens can be addressed with the value '0'.
+	For example...
+	
+		// Fire a tween but don't store its id
+		TweenFire("$60", "x>", 100);
+		
+		// Use '0' to pass the previously created tween id
+		TweenAddCallback(0, TWEEN_EV_FINISH, SomeScript);
+
+
+#13
+========================================
+ Negative delay values (jumps to start)
+========================================
+
+	This is bit of a hack at the moment which might not work in certain situations but
+	it does remain as a cool nifty thing if you know it's there!
+	
+	Using a negative delay value will cause the tween properties to jump to the initial
+	values of the tween, however, the tween will still be delayed by the absolute value of the delay.
+	I hope that makes sense... let me show you!
+	
+		TweenFire("$60", "+", -30, "x", x+100, x+200);
+		
+	In the above example, the 'x' variable will immediately jump to the start value right away,
+	however, the tween will still be delayed for 30 steps.
+	This is in contrast to regular delays which will not automatically jump values to the start
+	until the delay has first finished.
+	
+	This is still buggy for some use cases but should be fine for basic needs.
+	
+
+#14
+=========================
+ Struct Tweening Support
+=========================
+
+	Structs are directly supported as both properties AND targets.
+	So, you can do the following...
+	
+		aStruct = {val1:0, val2:0}
+		TweenFire("$60", "aStruct.val1", 0, 100);
+		
+	But, we can also use a struct as a target and directly supply it's given variables...
+	
+		aStruct = {val1:0, val2:0}
+		TweenFire("-target", aStruct, "$60", "val1>", 200, "val2>", 1200);
+		
+	If a tween is created within a struct, the structs "self" will be used as the default target.
+		
+			
+#15
+===================
+ Group Time Scales
+===================
+
+	Time scales can now be set per group by using the function TweenGroupSetTimeScale()...
+	
+		// Set group 10 to use a time scale of 0.5
+		TweenGroupSetTimeScale(10, 0.5);
+	
+	Please note that this is different from the example below...
+	
+		// Set the time scale for EACH tween within the group
+		TweenSet({group: 10}, "time_scale", 0.5);
+		
+	The example above would change the time scale for EACH tween individually within the group
+	and not affect the ACTUAL group scale as a whole.
+	
+	With this new addition, there are now 3 levels of time scales...
+		
+		GLOBAL
+		GROUP
+		PER-TWEEN
+	
+	GLOBAL, GROUP, and PER-TWEEN time scales can all be stacked together for combined effects...
+		
+		// Set system scale to x10.0
+		TweenSystemSet("time_scale", 10.0);
+		
+		// Set group 2 scale to x0.5
+		TweenGroupSetTimeScale(2, 0.5);
+		
+		// Set specific tween scale to x.0.25
+		TweenSet(myTween, "time_scale", 0.25);
+		
+	The final output scale for 'myTween' above would be 1.25
+
+			
+#16
+======================
+ Normalized Durations
+======================
+
+	This feature allows you to set the duration as an average rate of change.
+	STEP and DELTA timing are both handled a bit differently:
+	
+	STEP: rate of change per step (on average)
+	DELTA: rate of change per second (on average)
+	
+	Structs passed to the duration paramter are used to enable the feature.
+	The struct can take 1 of 3 different fields for setting the calculation method:
+		1) rate:	-> duration equals the sum of all absolute property change values divided by the given rate
+		2) weight:  -> duration is affected by the weighting of property change values
+		3) cut:		-> method used in previous betas -- similar to 'rate:' but divides the final duration by the number of properties included
+			
+	NOTE: When there is only one property, all 3 options will work exactly the same.
+		
+	The optional field 'use:' can also be set to specify the amount of properties to include in the calculation.
+			
+		* Examples:
+			// Use 'rate:' to set duration
+			TweenFire(id, "io", 0, true, 0, {rate:50}, "x", 0, 100, "y", 0, 100); // 4 Seconds
+			
+			// Use 'weight:' to set duration
+			TweenFire(id, "io", 0, true, 0, {weight:50}, "x", 0, 100, "y", 0, 100); // 3 Seconds
+			
+			// Use 'cut:" to set duration
+			TweenFire(id, "io", 0, true, 0, {cut:50}, "x", 0, 100, "y", 0, 100); // 2 Seconds
+			
+			// Use only the first 2 properties for duration calculation
+			TweenFire(id, "io", 0, true, 0, {rate:50, use:2}, "x>", 100, "y>", 100, "image_angle", 0, 360); // 4 Seconds
+
+	This can be useful for delayed tweens where you don't know the final start and/or destination values.
+
+		TwenFire("+100", "$", {rate:10}, "~io", "x>", mouse_x);
+	
+	** Please note that normalized durations are not currently supported for ease/duration swapping **
+	
+		// This currently won't work
+		TweenFire("-duration", [{rate:10},{rate:20}], "#patrol", "x", 0, 100);
+		
+		
+
+		
+		
+		
+		
+		
+
+
+
+
+
+
+
+
+
+	
