@@ -1,11 +1,42 @@
 /// @description Insert description here
-//Movement
-var d = inputdog_direction("up","down","left","right",playerSlot);
-if(d == -1)
-    speed = 0;
-else
-{  
-    var s = point_distance(0,0, -inputdog_analog("left",playerSlot)+inputdog_analog("right",playerSlot),
-                                -inputdog_analog("up",playerSlot)+inputdog_analog("down",playerSlot))
-    motion_set(d,3 * s);
+if (!active)
+{
+	exit;
 }
+
+//X Movement
+if (inputdog_down("right", playerSlot))
+{
+	currentSpeed += acceleration / room_speed + (sign(currentSpeed) < 0 ? deceleration / room_speed : 0);
+}
+else if (inputdog_down("left", playerSlot))
+{
+	currentSpeed -= acceleration / room_speed + (sign(currentSpeed) > 0 ? deceleration / room_speed : 0);
+}
+else
+{
+	currentSpeed -= deceleration / room_speed * sign(currentSpeed);
+}
+
+if (abs(currentSpeed) > maxSpeed)
+{
+	currentSpeed = sign(currentSpeed) * maxSpeed;
+}
+
+x += currentSpeed / room_speed;
+
+//Y Movement
+if (inputdog_down("up", playerSlot) && y > upperYLimit)
+{
+	currentYSpeed = -verticalSpeed / room_speed;
+}
+else if (inputdog_down("down", playerSlot) && y < lowerYLimit)
+{
+	currentYSpeed = verticalSpeed / room_speed;
+}
+else
+{
+	currentYSpeed = 0;
+}
+
+y += currentYSpeed;
