@@ -1,16 +1,13 @@
 {
-  "spriteId": {
-    "name": "sprKITTBase",
-    "path": "sprites/sprKITTBase/sprKITTBase.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "managed": true,
   "spriteMaskId": null,
   "persistent": false,
   "parentObjectId": {
-    "name": "objControllableCharacterBase",
-    "path": "objects/objControllableCharacterBase/objControllableCharacterBase.yy",
+    "name": "objCharacterBase",
+    "path": "objects/objCharacterBase/objCharacterBase.yy",
   },
   "physicsObject": false,
   "physicsSensor": false,
@@ -35,7 +32,7 @@
     "path": "folders/Objects/Characters.yy",
   },
   "resourceVersion": "1.0",
-  "name": "objKITT",
+  "name": "objControllableCharacterBase",
   "tags": [],
   "resourceType": "GMObject",
 }

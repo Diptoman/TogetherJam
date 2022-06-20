@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "sprKITTBase",
-    "path": "sprites/sprKITTBase/sprKITTBase.yy",
+    "name": "sDogGrowl",
+    "path": "sprites/sDogGrowl/sDogGrowl.yy",
   },
   "solid": false,
   "visible": true,
@@ -35,7 +35,7 @@
     "path": "folders/Objects/Characters.yy",
   },
   "resourceVersion": "1.0",
-  "name": "objKITT",
+  "name": "objAirwolf",
   "tags": [],
   "resourceType": "GMObject",
 }

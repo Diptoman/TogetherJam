@@ -1,6 +1,8 @@
-/// @description Init stuff
-
 event_inherited();
+
+//Controllable Basic
+playerSlot = 1;
+active = true;
 
 //Horizontal Movement
 accelerationX = 960; //per sec
@@ -12,6 +14,5 @@ accelerationY = 720; //per sec
 decelerationY = 840; //per sec
 maxSpeedY = 240; //per sec
 
-//Limits
-upperYLimit = 720;
-lowerYLimit = 1040;
+currentSpeedX = 0;
+currentSpeedY = 0;
