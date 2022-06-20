@@ -13,3 +13,12 @@ maxSpeedY = 240; //per sec
 //Limits
 upperYLimit = 40;
 lowerYLimit = 480;
+
+//Attach details
+attachNum = 1;
+ringAttachNum = 1;
+attachRing = 1;
+currentSpaceIncrement = 7;
+currentSpace = 9;
+attachDistanceX = 32;
+attachDistanceY = 24;

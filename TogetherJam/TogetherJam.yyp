@@ -84,6 +84,7 @@
     {"id":{"name":"InputManager","path":"objects/InputManager/InputManager.yy",},"order":7,},
     {"id":{"name":"TGMX_1_EasyTweens","path":"scripts/TGMX_1_EasyTweens/TGMX_1_EasyTweens.yy",},"order":5,},
     {"id":{"name":"joystick_xpos","path":"scripts/joystick_xpos/joystick_xpos.yy",},"order":5,},
+    {"id":{"name":"objHeli","path":"objects/objHeli/objHeli.yy",},"order":4,},
     {"id":{"name":"Input_Dog","path":"extensions/Input_Dog/Input_Dog.yy",},"order":1,},
     {"id":{"name":"rExampleInputRemapping","path":"rooms/rExampleInputRemapping/rExampleInputRemapping.yy",},"order":1,},
     {"id":{"name":"TGMX_6_TweenTools","path":"scripts/TGMX_6_TweenTools/TGMX_6_TweenTools.yy",},"order":10,},
