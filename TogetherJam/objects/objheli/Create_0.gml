@@ -7,7 +7,8 @@ attachRing = target.attachRing;
 currentSpace = target.currentSpace;
 
 //Speed
-attachSpeed = random_range(0.15, 0.2);
+baseAttachSpeed = random_range(0.2, 0.35);
+attachSpeed = baseAttachSpeed / attachRing;
 
 //Temp
 image_xscale = 0.5;
