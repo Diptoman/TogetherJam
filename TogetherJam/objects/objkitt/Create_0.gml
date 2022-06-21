@@ -15,3 +15,8 @@ maxSpeedY = 240; //per sec
 //Limits
 upperYLimit = 720;
 lowerYLimit = 1040;
+
+//Shooting
+bulletGapTime = 8;
+bulletSpeed = 16;
+bulletSprite = sprKITTBullet;

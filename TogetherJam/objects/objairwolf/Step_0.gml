@@ -21,3 +21,9 @@ if (keyboard_check_pressed(ord("X")))
 		heli.SetupPosition(self.id, i + 1);
 	}
 }
+
+//Shoot
+if (active)
+{
+	Shoot(16, 0);
+}

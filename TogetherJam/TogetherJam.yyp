@@ -116,6 +116,7 @@
     {"id":{"name":"objGameController","path":"objects/objGameController/objGameController.yy",},"order":0,},
     {"id":{"name":"inputdog_find_inputmanager_child_by_gamepad","path":"scripts/inputdog_find_inputmanager_child_by_gamepad/inputdog_find_inputmanager_child_by_gamepad.yy",},"order":6,},
     {"id":{"name":"inputdog_down","path":"scripts/inputdog_down/inputdog_down.yy",},"order":5,},
+    {"id":{"name":"objBullet","path":"objects/objBullet/objBullet.yy",},"order":5,},
     {"id":{"name":"TGMX_Beta_Notes","path":"notes/TGMX_Beta_Notes/TGMX_Beta_Notes.yy",},"order":0,},
     {"id":{"name":"inputdog_replay_start_playing","path":"scripts/inputdog_replay_start_playing/inputdog_replay_start_playing.yy",},"order":3,},
     {"id":{"name":"EaseFastToSlow","path":"animcurves/EaseFastToSlow/EaseFastToSlow.yy",},"order":0,},

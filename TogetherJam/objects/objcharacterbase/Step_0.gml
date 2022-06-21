@@ -1,0 +1,1 @@
+currentBulletGapTime -= 1;

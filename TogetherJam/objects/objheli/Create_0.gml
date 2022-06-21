@@ -7,6 +7,11 @@ attachRing = 0;
 spaceInCurrentRing = 1;
 attachSpeed = 1;
 
+//Shooting
+bulletGapTime = 14;
+bulletSpeed = 10;
+bulletSprite = sprHeliBullet;
+
 //Temp
 image_xscale = 0.5;
 image_yscale = 0.5;

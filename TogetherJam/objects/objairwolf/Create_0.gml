@@ -22,5 +22,9 @@ baseSpace = 4;
 
 attachDistanceX = 32;
 attachDistanceY = 32;
-
 heliList = ds_list_create();
+
+//Shooting
+bulletGapTime = 12;
+bulletSpeed = 12;
+bulletSprite = sprAirwolfBullet;
