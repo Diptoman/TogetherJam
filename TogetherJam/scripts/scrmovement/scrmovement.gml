@@ -4,13 +4,13 @@
 /// @param Xdecel
 /// @param Xmaxspd
 
-function scr_calculate_speed_x(playerSlot, currentSpeedX, accelerationX, decelerationX, maxSpeedX)
+function scr_calculate_speed_x(playerSlot, currentSpeedX, accelerationX, decelerationX, maxSpeedX, isActive)
 {
-	if (inputdog_down("right", playerSlot))
+	if (inputdog_down("right", playerSlot) && isActive)
 	{
 		currentSpeedX += accelerationX / room_speed + (sign(currentSpeedX) < 0 ? decelerationX / room_speed : 0);
 	}
-	else if (inputdog_down("left", playerSlot))
+	else if (inputdog_down("left", playerSlot) && isActive)
 	{
 		currentSpeedX -= accelerationX / room_speed + (sign(currentSpeedX) > 0 ? decelerationX / room_speed : 0);
 	}
@@ -32,19 +32,19 @@ function scr_calculate_speed_x(playerSlot, currentSpeedX, accelerationX, deceler
 }
 
 
-/// @function scr_calculate_speed_y(playerSlot, accelerationY, decelerationY, maxSpeedY, upperYLimit, lowerYLimit)
+/// @function scr_calculate_speed_y(playerSlot, accelerationY, decelerationY, maxSpeedY, upperYLimit, lowerYLimit, isActive)
 /// @param playerslot
 /// @param Yaccel
 /// @param Ydecel
 /// @param Ymaxspd
 
-function scr_calculate_speed_y(playerSlot, currentSpeedY, accelerationY, decelerationY, maxSpeedY)
+function scr_calculate_speed_y(playerSlot, currentSpeedY, accelerationY, decelerationY, maxSpeedY, isActive)
 {
-	if (inputdog_down("up", playerSlot))
+	if (inputdog_down("up", playerSlot) && isActive)
 	{
 		currentSpeedY -= accelerationY / room_speed + (sign(currentSpeedY) > 0 ? decelerationY / room_speed : 0);
 	}
-	else if (inputdog_down("down", playerSlot))
+	else if (inputdog_down("down", playerSlot) && isActive)
 	{
 		currentSpeedY += accelerationY / room_speed + (sign(currentSpeedY) < 0 ? decelerationY / room_speed : 0);
 	}
