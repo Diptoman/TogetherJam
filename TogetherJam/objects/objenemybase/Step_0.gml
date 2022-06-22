@@ -1,6 +1,7 @@
 if (hp <= 0)
 {
 	isAlive = false;
+	instance_destroy();
 }
 
 //Movement function executions
@@ -10,7 +11,7 @@ if (moveType == "Scaling")
 		
 	if (distance_to_point(finalX, finalY) > finalSpeed)
 	{
-		move_towards_point(finalX, finalY, initialSpeed + (finalSpeed - initialSpeed) * (1 - distanceScale) * global.slowmotimescale * global.timescale);
+		move_towards_point(finalX, finalY, (initialSpeed + (finalSpeed - initialSpeed) * (1 - distanceScale)) * global.slowmotimescale * global.timescale);
 	}
 	else
 	{

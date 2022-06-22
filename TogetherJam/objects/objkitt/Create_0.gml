@@ -20,3 +20,4 @@ lowerYLimit = 1040;
 bulletGapTime = 8;
 bulletSpeed = 16;
 bulletSprite = sprKITTBullet;
+bulletDamage = 32;

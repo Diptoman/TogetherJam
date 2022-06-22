@@ -1,20 +1,26 @@
 event_inherited();
 
 targetX = -64;
-targetY = random_range(40, 720);
 
-type = 1; //random_range(1, 2);
+type = ceil(random_range(0, 2));
+
 if (type == 1)
 {
 	targetY = random_range(40, 720);
-	MoveToScaling(targetX, targetY, 8, 14);
 }
-/*else
+else
 {
-	moveTargets = ds_list_create();
-	for(i = 0; i < 3; i++)
+	moveTargetX = ds_stack_create();
+	moveTargetY = ds_stack_create();
+	var totalDivs = 3;
+	for(i = 0; i < totalDivs; i++)
 	{
-		ds_list_add(moveTargets, random_range(40, 720));
+		ds_stack_push(moveTargetX, i * room_width / totalDivs);
+		ds_stack_push(moveTargetY, random_range(40, 720));
 	}
-	MoveToScaling(targetX, targetY, 8, 14);
-}*/
+	
+	targetX = ds_stack_pop(moveTargetX);
+	targetY = ds_stack_pop(moveTargetY);
+}
+
+MoveToScaling(targetX, targetY, 8, 14);

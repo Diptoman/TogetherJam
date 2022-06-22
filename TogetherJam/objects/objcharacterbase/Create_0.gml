@@ -14,13 +14,14 @@ bulletSpeed = 16;
 bulletGapTime = 10; //frames
 currentBulletGapTime = bulletGapTime;
 bulletSprite = sprKITTBullet;
+bulletDamage = 10;
 
 function Shoot(xOffset, yOffset)
 {
 	if (currentBulletGapTime <= 0)
 	{
 		bull = instance_create_layer(x + xOffset, y + yOffset, "Characters", objBullet);
-		bull.InitializeBullet(0, bulletSpeed, bulletSprite);
+		bull.InitializeBullet(0, bulletSpeed, bulletSprite, bulletDamage);
 		currentBulletGapTime = bulletGapTime;
 	}
 }

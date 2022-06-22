@@ -34,6 +34,7 @@ heliList = ds_list_create();
 bulletGapTime = 12;
 bulletSpeed = 12;
 bulletSprite = sprAirwolfBullet;
+bulletDamage = 20;
 
 function UpdateScreenLimits()
 {

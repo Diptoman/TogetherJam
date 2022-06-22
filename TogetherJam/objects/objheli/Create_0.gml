@@ -11,6 +11,7 @@ attachSpeed = 1;
 bulletGapTime = 14;
 bulletSpeed = 10;
 bulletSprite = sprHeliBullet;
+bulletDamage = 20;
 
 //Temp
 image_xscale = 0.5;
