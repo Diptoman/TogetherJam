@@ -11,8 +11,14 @@ decelerationY = 540; //per sec
 maxSpeedY = 240; //per sec
 
 //Limits
-upperYLimit = 40;
-lowerYLimit = 480;
+baseUpperYLimit = 40;
+baseLowerYLimit = 480;
+upperYLimit = baseUpperYLimit;
+lowerYLimit = baseLowerYLimit;
+baseUpperXLimit = room_width - 40;
+baseLowerXLimit = 40;
+upperXLimit = baseUpperXLimit;
+lowerXLimit = baseLowerXLimit;
 
 //Attach details
 attachNum = 1;
@@ -28,3 +34,23 @@ heliList = ds_list_create();
 bulletGapTime = 12;
 bulletSpeed = 12;
 bulletSprite = sprAirwolfBullet;
+
+function UpdateScreenLimits()
+{
+	//Update limits
+	if (ds_list_size(heliList) == 0)
+	{
+		upperYLimit = upperYLimit;
+		lowerYLimit = lowerYLimit;
+		upperXLimit = baseUpperXLimit;
+		lowerXLimit = baseLowerXLimit;
+	}
+	else
+	{
+		var ring = ds_list_find_value(heliList, ds_list_size(heliList) - 1).attachRing;
+		upperYLimit = baseUpperYLimit + ring * attachDistanceY;
+		lowerYLimit = baseLowerYLimit - ring * attachDistanceY;
+		upperXLimit = baseUpperXLimit - ring * attachDistanceX;
+		lowerXLimit = baseLowerXLimit + ring * attachDistanceX;
+	}
+}

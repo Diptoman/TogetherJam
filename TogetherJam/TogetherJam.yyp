@@ -51,6 +51,7 @@
     {"id":{"name":"o_SharedTweener","path":"objects/o_SharedTweener/o_SharedTweener.yy",},"order":0,},
     {"id":{"name":"sprKITTBase","path":"sprites/sprKITTBase/sprKITTBase.yy",},"order":0,},
     {"id":{"name":"TGMX_Terms_of_Use","path":"notes/TGMX_Terms_of_Use/TGMX_Terms_of_Use.yy",},"order":2,},
+    {"id":{"name":"obj","path":"objects/obj/obj.yy",},"order":1,},
     {"id":{"name":"GoToExampleRoom","path":"objects/GoToExampleRoom/GoToExampleRoom.yy",},"order":1,},
     {"id":{"name":"objControllableCharacterBase","path":"objects/objControllableCharacterBase/objControllableCharacterBase.yy",},"order":2,},
     {"id":{"name":"EaseHeartbeat","path":"animcurves/EaseHeartbeat/EaseHeartbeat.yy",},"order":1,},
@@ -98,6 +99,7 @@
     {"id":{"name":"ExampleDog","path":"objects/ExampleDog/ExampleDog.yy",},"order":0,},
     {"id":{"name":"LoadDefaultInputs","path":"objects/LoadDefaultInputs/LoadDefaultInputs.yy",},"order":3,},
     {"id":{"name":"inputdog_get_custom_controls_file","path":"scripts/inputdog_get_custom_controls_file/inputdog_get_custom_controls_file.yy",},"order":0,},
+    {"id":{"name":"objEnemyBase","path":"objects/objEnemyBase/objEnemyBase.yy",},"order":0,},
     {"id":{"name":"TGMX_9_Settings","path":"scripts/TGMX_9_Settings/TGMX_9_Settings.yy",},"order":13,},
     {"id":{"name":"inputdog_check_gamepad_input","path":"scripts/inputdog_check_gamepad_input/inputdog_check_gamepad_input.yy",},"order":3,},
     {"id":{"name":"inputdog_search_for_joysticks","path":"scripts/inputdog_search_for_joysticks/inputdog_search_for_joysticks.yy",},"order":13,},
@@ -186,6 +188,7 @@
     {"folderPath":"folders/Scripts/CHaracter.yy","order":3,"resourceVersion":"1.0","name":"CHaracter","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Sprites/Background.yy","order":3,"resourceVersion":"1.0","name":"Background","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Objects/Background.yy","order":4,"resourceVersion":"1.0","name":"Background","tags":[],"resourceType":"GMFolder",},
+    {"folderPath":"folders/Objects/Enemies.yy","order":5,"resourceVersion":"1.0","name":"Enemies","tags":[],"resourceType":"GMFolder",},
   ],
   "AudioGroups": [
     {"targets":-1,"resourceVersion":"1.3","name":"audiogroup_default","resourceType":"GMAudioGroup",},

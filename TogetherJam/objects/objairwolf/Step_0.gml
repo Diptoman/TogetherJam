@@ -4,9 +4,11 @@ event_inherited();
 if (keyboard_check_pressed(vk_space))
 {
 	attachNum += 1;
-	heli = instance_create(0, 0, objHeli);
+	heli = instance_create_layer(0, 0, "Characters", objHeli);
 	ds_list_add(heliList, heli);
 	heli.SetupPosition(self.id, attachNum);
+	
+	UpdateScreenLimits();
 }
 
 if (keyboard_check_pressed(ord("X")))
@@ -20,6 +22,8 @@ if (keyboard_check_pressed(ord("X")))
 		heli = ds_list_find_value(heliList, i);
 		heli.SetupPosition(self.id, i + 1);
 	}
+	
+	UpdateScreenLimits();
 }
 
 //Shoot
@@ -27,3 +31,4 @@ if (active)
 {
 	Shoot(16, 0);
 }
+

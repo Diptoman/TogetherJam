@@ -25,11 +25,11 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Characters",
-    "path": "folders/Objects/Characters.yy",
+    "name": "Enemies",
+    "path": "folders/Objects/Enemies.yy",
   },
   "resourceVersion": "1.0",
-  "name": "objBullet",
+  "name": "objEnemyBase",
   "tags": [],
   "resourceType": "GMObject",
 }
