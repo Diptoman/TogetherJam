@@ -1,0 +1,1 @@
+timeBetweenEnemies = 60;
