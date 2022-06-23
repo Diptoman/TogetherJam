@@ -7,7 +7,8 @@ if ((distance_to_point(targetX, targetY) <= 14) && (type == 2))
 		targetX = ds_stack_pop(moveTargetX);
 		targetY = ds_stack_pop(moveTargetY);
 
-		MoveToScaling(targetX, targetY, 8, 14);
+		MoveToScaling(targetX, targetY, currentMaxSpeed, currentMaxSpeed + 2);
+		currentMaxSpeed += 2;
 	}
 	else
 	{

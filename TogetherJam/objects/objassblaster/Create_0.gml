@@ -4,6 +4,8 @@ targetX = -64;
 
 type = ceil(random_range(0, 2));
 
+currentMaxSpeed = 10;
+
 if (type == 1)
 {
 	targetY = random_range(40, 720);
@@ -23,4 +25,5 @@ else
 	targetY = ds_stack_pop(moveTargetY);
 }
 
-MoveToScaling(targetX, targetY, 8, 14);
+MoveToScaling(targetX, targetY, 8, currentMaxSpeed);
+currentMaxSpeed += 2;

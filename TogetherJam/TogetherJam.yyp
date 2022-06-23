@@ -85,6 +85,7 @@
     {"id":{"name":"TGMX_0_MainTweens","path":"scripts/TGMX_0_MainTweens/TGMX_0_MainTweens.yy",},"order":4,},
     {"id":{"name":"TGMX_8_SystemUtilities","path":"scripts/TGMX_8_SystemUtilities/TGMX_8_SystemUtilities.yy",},"order":12,},
     {"id":{"name":"sThinButton","path":"sprites/sThinButton/sThinButton.yy",},"order":4,},
+    {"id":{"name":"objShrieker","path":"objects/objShrieker/objShrieker.yy",},"order":2,},
     {"id":{"name":"TGMX_Documentation","path":"notes/TGMX_Documentation/TGMX_Documentation.yy",},"order":1,},
     {"id":{"name":"InputManager","path":"objects/InputManager/InputManager.yy",},"order":7,},
     {"id":{"name":"sprSky","path":"sprites/sprSky/sprSky.yy",},"order":1,},
