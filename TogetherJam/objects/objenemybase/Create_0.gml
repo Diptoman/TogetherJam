@@ -8,6 +8,7 @@ finalX = 0;
 initialY = y;
 finalY = 0;
 moveType = "";
+targetGravity = 0;
 
 //Movement functions
 function MoveToScaling(targetX, targetY, initSpeed, finSpeed)
@@ -20,4 +21,12 @@ function MoveToScaling(targetX, targetY, initSpeed, finSpeed)
 	finalY = targetY;
 	
 	moveType = "Scaling";
+}
+
+function Jump(amount)
+{
+	targetGravity = 0.5;
+	vspeed = -amount;
+	
+	moveType = "Jumping";
 }

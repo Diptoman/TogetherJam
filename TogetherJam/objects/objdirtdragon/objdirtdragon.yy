@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "sprAirwolf",
-    "path": "sprites/sprAirwolf/sprAirwolf.yy",
+    "name": "sprDirtDragon",
+    "path": "sprites/sprDirtDragon/sprDirtDragon.yy",
   },
   "solid": false,
   "visible": true,
@@ -9,8 +9,8 @@
   "spriteMaskId": null,
   "persistent": false,
   "parentObjectId": {
-    "name": "objControllableCharacterBase",
-    "path": "objects/objControllableCharacterBase/objControllableCharacterBase.yy",
+    "name": "objEnemyBase",
+    "path": "objects/objEnemyBase/objEnemyBase.yy",
   },
   "physicsObject": false,
   "physicsSensor": false,
@@ -31,11 +31,11 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Characters",
-    "path": "folders/Objects/Characters.yy",
+    "name": "Enemies",
+    "path": "folders/Objects/Enemies.yy",
   },
   "resourceVersion": "1.0",
-  "name": "objAirwolf",
+  "name": "objDirtDragon",
   "tags": [],
   "resourceType": "GMObject",
 }

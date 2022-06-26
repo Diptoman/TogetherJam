@@ -17,7 +17,7 @@ else
 	var totalDivs = 3;
 	for(i = 0; i < totalDivs; i++)
 	{
-		ds_stack_push(moveTargetX, i * room_width / totalDivs);
+		ds_stack_push(moveTargetX, i * room_width / totalDivs - 64);
 		ds_stack_push(moveTargetY, random_range(40, 720));
 	}
 	

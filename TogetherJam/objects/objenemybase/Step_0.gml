@@ -9,7 +9,7 @@ if (moveType == "Scaling")
 {
 	distanceScale = point_distance(x, y, finalX, finalY) / point_distance(initialX, initialY, finalX, finalY);
 		
-	if (distance_to_point(finalX, finalY) > initialSpeed)
+	if (distance_to_point(finalX, finalY) > 1)
 	{
 		move_towards_point(finalX, finalY, (initialSpeed + (finalSpeed - initialSpeed) * (1 - distanceScale)) * global.slowmotimescale * global.timescale);
 	}
@@ -17,4 +17,8 @@ if (moveType == "Scaling")
 	{
 		speed = 0;
 	}
+}
+else if (moveType == "Jumping")
+{
+	gravity = targetGravity * (global.slowmotimescale * global.timescale);
 }
