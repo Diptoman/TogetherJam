@@ -3,6 +3,7 @@
     {"id":{"name":"inputdog_replay_stop_recording","path":"scripts/inputdog_replay_stop_recording/inputdog_replay_stop_recording.yy",},"order":6,},
     {"id":{"name":"rInitInputManager","path":"rooms/rInitInputManager/rInitInputManager.yy",},"order":3,},
     {"id":{"name":"InputForPlayer4","path":"objects/InputForPlayer4/InputForPlayer4.yy",},"order":6,},
+    {"id":{"name":"sprHeliLanded","path":"sprites/sprHeliLanded/sprHeliLanded.yy",},"order":3,},
     {"id":{"name":"inputdog_replay_file_load","path":"scripts/inputdog_replay_file_load/inputdog_replay_file_load.yy",},"order":0,},
     {"id":{"name":"inputdog_replay_get_input_string","path":"scripts/inputdog_replay_get_input_string/inputdog_replay_get_input_string.yy",},"order":2,},
     {"id":{"name":"inputdog_keyboard_check_direct","path":"scripts/inputdog_keyboard_check_direct/inputdog_keyboard_check_direct.yy",},"order":11,},
