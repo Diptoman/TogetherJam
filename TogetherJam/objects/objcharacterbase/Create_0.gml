@@ -8,6 +8,8 @@ lowerXLimit = 0;
 
 //Health
 hp = 100;
+canBeHit = true;
+damageTween = -1;
 
 //Shooting
 bulletSpeed = 16;

@@ -110,6 +110,7 @@
     {"id":{"name":"objGroundHole","path":"objects/objGroundHole/objGroundHole.yy",},"order":4,},
     {"id":{"name":"inputdog_set_rumble","path":"scripts/inputdog_set_rumble/inputdog_set_rumble.yy",},"order":8,},
     {"id":{"name":"TGMS_Experimental","path":"scripts/TGMS_Experimental/TGMS_Experimental.yy",},"order":3,},
+    {"id":{"name":"sprKITTUpgrade","path":"sprites/sprKITTUpgrade/sprKITTUpgrade.yy",},"order":6,},
     {"id":{"name":"ExampleDog","path":"objects/ExampleDog/ExampleDog.yy",},"order":0,},
     {"id":{"name":"LoadDefaultInputs","path":"objects/LoadDefaultInputs/LoadDefaultInputs.yy",},"order":3,},
     {"id":{"name":"inputdog_get_custom_controls_file","path":"scripts/inputdog_get_custom_controls_file/inputdog_get_custom_controls_file.yy",},"order":0,},
@@ -138,6 +139,7 @@
     {"id":{"name":"TGMX_Beta_Notes","path":"notes/TGMX_Beta_Notes/TGMX_Beta_Notes.yy",},"order":0,},
     {"id":{"name":"inputdog_replay_start_playing","path":"scripts/inputdog_replay_start_playing/inputdog_replay_start_playing.yy",},"order":3,},
     {"id":{"name":"EaseFastToSlow","path":"animcurves/EaseFastToSlow/EaseFastToSlow.yy",},"order":0,},
+    {"id":{"name":"sprHelipad","path":"sprites/sprHelipad/sprHelipad.yy",},"order":2,},
     {"id":{"name":"rmMenu","path":"rooms/rmMenu/rmMenu.yy",},"order":0,},
   ],
   "Options": [
