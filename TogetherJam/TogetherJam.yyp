@@ -118,6 +118,7 @@
     {"id":{"name":"LoadDefaultInputs","path":"objects/LoadDefaultInputs/LoadDefaultInputs.yy",},"order":3,},
     {"id":{"name":"inputdog_get_custom_controls_file","path":"scripts/inputdog_get_custom_controls_file/inputdog_get_custom_controls_file.yy",},"order":0,},
     {"id":{"name":"objEnemyBase","path":"objects/objEnemyBase/objEnemyBase.yy",},"order":0,},
+    {"id":{"name":"sprGround","path":"sprites/sprGround/sprGround.yy",},"order":5,},
     {"id":{"name":"TGMX_9_Settings","path":"scripts/TGMX_9_Settings/TGMX_9_Settings.yy",},"order":13,},
     {"id":{"name":"inputdog_check_gamepad_input","path":"scripts/inputdog_check_gamepad_input/inputdog_check_gamepad_input.yy",},"order":3,},
     {"id":{"name":"inputdog_search_for_joysticks","path":"scripts/inputdog_search_for_joysticks/inputdog_search_for_joysticks.yy",},"order":13,},
