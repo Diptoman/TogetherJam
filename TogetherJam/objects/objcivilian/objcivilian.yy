@@ -1,5 +1,8 @@
 {
-  "spriteId": null,
+  "spriteId": {
+    "name": "sprCivilian1",
+    "path": "sprites/sprCivilian1/sprCivilian1.yy",
+  },
   "solid": false,
   "visible": true,
   "managed": true,
@@ -20,17 +23,17 @@
   "physicsShapePoints": [],
   "eventList": [
     {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"isDnD":false,"eventNum":0,"eventType":4,"collisionObjectId":{"name":"objControllableCharacterBase","path":"objects/objControllableCharacterBase/objControllableCharacterBase.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
     {"isDnD":false,"eventNum":0,"eventType":3,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
-    {"isDnD":false,"eventNum":0,"eventType":1,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
   ],
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Enemies",
-    "path": "folders/Objects/Enemies.yy",
+    "name": "Characters",
+    "path": "folders/Objects/Characters.yy",
   },
   "resourceVersion": "1.0",
-  "name": "objEnemyBase",
+  "name": "objCivilian",
   "tags": [],
   "resourceType": "GMObject",
 }

@@ -9,6 +9,8 @@ initialY = y;
 finalY = 0;
 moveType = "";
 targetGravity = 0;
+canSpawnCivilians = false;
+isCivilianSpawner = false;
 
 //Movement functions
 function MoveToScaling(targetX, targetY, initSpeed, finSpeed)

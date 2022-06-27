@@ -119,6 +119,7 @@
     {"id":{"name":"inputdog_search_for_joysticks","path":"scripts/inputdog_search_for_joysticks/inputdog_search_for_joysticks.yy",},"order":13,},
     {"id":{"name":"sprAssBlaster","path":"sprites/sprAssBlaster/sprAssBlaster.yy",},"order":1,},
     {"id":{"name":"SetInput","path":"objects/SetInput/SetInput.yy",},"order":5,},
+    {"id":{"name":"objCivilian","path":"objects/objCivilian/objCivilian.yy",},"order":8,},
     {"id":{"name":"inputdog_get_keyboard_string","path":"scripts/inputdog_get_keyboard_string/inputdog_get_keyboard_string.yy",},"order":9,},
     {"id":{"name":"SaveInputMapping","path":"objects/SaveInputMapping/SaveInputMapping.yy",},"order":4,},
     {"id":{"name":"scrMovement","path":"scripts/scrMovement/scrMovement.yy",},"order":0,},

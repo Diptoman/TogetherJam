@@ -11,3 +11,6 @@ global.slowmotimescale = 1;
 slowMoCooldown = 30;
 slowMoDuration = 150;
 playerSlot = 1;
+
+global.civiliansaved = 0;
+global.civilianmissed = 0;
