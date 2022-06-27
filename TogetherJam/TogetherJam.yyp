@@ -1,6 +1,7 @@
 {
   "resources": [
     {"id":{"name":"inputdog_replay_stop_recording","path":"scripts/inputdog_replay_stop_recording/inputdog_replay_stop_recording.yy",},"order":6,},
+    {"id":{"name":"sprHelipadBottom","path":"sprites/sprHelipadBottom/sprHelipadBottom.yy",},"order":5,},
     {"id":{"name":"rInitInputManager","path":"rooms/rInitInputManager/rInitInputManager.yy",},"order":3,},
     {"id":{"name":"InputForPlayer4","path":"objects/InputForPlayer4/InputForPlayer4.yy",},"order":6,},
     {"id":{"name":"sprHeliLanded","path":"sprites/sprHeliLanded/sprHeliLanded.yy",},"order":3,},
@@ -34,6 +35,7 @@
     {"id":{"name":"TGMX_Update_Log","path":"notes/TGMX_Update_Log/TGMX_Update_Log.yy",},"order":3,},
     {"id":{"name":"sprHeliBullet","path":"sprites/sprHeliBullet/sprHeliBullet.yy",},"order":1,},
     {"id":{"name":"__joystick_2_gamepad","path":"scripts/__joystick_2_gamepad/__joystick_2_gamepad.yy",},"order":1,},
+    {"id":{"name":"sprHelipadUsed","path":"sprites/sprHelipadUsed/sprHelipadUsed.yy",},"order":4,},
     {"id":{"name":"objEnemyController","path":"objects/objEnemyController/objEnemyController.yy",},"order":3,},
     {"id":{"name":"sprKITTMissileLauncher","path":"sprites/sprKITTMissileLauncher/sprKITTMissileLauncher.yy",},"order":2,},
     {"id":{"name":"fButton","path":"fonts/fButton/fButton.yy",},"order":0,},
