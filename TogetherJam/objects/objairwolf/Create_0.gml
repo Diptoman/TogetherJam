@@ -36,6 +36,9 @@ bulletSpeed = 12;
 bulletSprite = sprAirwolfBullet;
 bulletDamage = 20;
 
+//Special
+bombGap = 16;
+
 function UpdateScreenLimits()
 {
 	//Update limits

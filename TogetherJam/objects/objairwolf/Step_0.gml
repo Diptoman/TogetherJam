@@ -32,3 +32,13 @@ if (active)
 	Shoot(16, 0);
 }
 
+//Special
+if (inputdog_pressed("special", playerSlot) && canUseSpecial && active)
+{
+	instance_create_layer(x, y, "Characters", objAirwolfBomb);
+	specialCount = 1;
+	alarm[1] = bombGap;
+	
+	canUseSpecial = false;
+	alarm[0] = specialUseTime;
+}

@@ -16,3 +16,8 @@ maxSpeedY = 240; //per sec
 
 currentSpeedX = 0;
 currentSpeedY = 0;
+
+//Secondary shooting
+specialUseTime = 120;
+alarm[0] = specialUseTime;
+canUseSpecial = false;
