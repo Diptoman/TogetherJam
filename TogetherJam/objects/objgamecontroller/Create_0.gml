@@ -14,3 +14,5 @@ playerSlot = 1;
 
 global.civiliansaved = 0;
 global.civilianmissed = 0;
+
+global.kittpower = 1;

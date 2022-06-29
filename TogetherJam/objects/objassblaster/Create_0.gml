@@ -6,6 +6,8 @@ type = ceil(random_range(0, 2));
 
 currentMaxSpeed = 10;
 
+containsUpgrade = false;
+
 if (type == 1)
 {
 	targetY = random_range(40, 720);

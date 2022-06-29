@@ -2,6 +2,7 @@ event_inherited();
 
 if (active)
 {
+	bulletDamage = 32 + global.kittpower * 2;
 	Shoot(16, 0);
 }
 

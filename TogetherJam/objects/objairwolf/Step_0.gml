@@ -11,6 +11,16 @@ if (keyboard_check_pressed(vk_space))
 	UpdateScreenLimits();
 }
 
+//Heli spawn
+function HeliSpawned(heli)
+{
+	attachNum += 1;
+	ds_list_add(heliList, heli);
+	heli.SetupPosition(self.id, attachNum);
+	
+	UpdateScreenLimits();
+}
+
 if (keyboard_check_pressed(ord("X")))
 {
 	numToDestroy = random(ds_list_size(heliList) - 1);
