@@ -104,6 +104,7 @@
     {"id":{"name":"InputManager","path":"objects/InputManager/InputManager.yy",},"order":7,},
     {"id":{"name":"sprSky","path":"sprites/sprSky/sprSky.yy",},"order":1,},
     {"id":{"name":"TGMX_1_EasyTweens","path":"scripts/TGMX_1_EasyTweens/TGMX_1_EasyTweens.yy",},"order":5,},
+    {"id":{"name":"sprExplosion1","path":"sprites/sprExplosion1/sprExplosion1.yy",},"order":0,},
     {"id":{"name":"sprGroundHole","path":"sprites/sprGroundHole/sprGroundHole.yy",},"order":4,},
     {"id":{"name":"joystick_xpos","path":"scripts/joystick_xpos/joystick_xpos.yy",},"order":5,},
     {"id":{"name":"objUpgrade","path":"objects/objUpgrade/objUpgrade.yy",},"order":11,},
@@ -215,6 +216,7 @@
     {"folderPath":"folders/Objects/Background.yy","order":4,"resourceVersion":"1.0","name":"Background","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Objects/Enemies.yy","order":5,"resourceVersion":"1.0","name":"Enemies","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Sprites/Characters/Civilians.yy","order":6,"resourceVersion":"1.0","name":"Civilians","tags":[],"resourceType":"GMFolder",},
+    {"folderPath":"folders/Sprites/FX.yy","order":4,"resourceVersion":"1.0","name":"FX","tags":[],"resourceType":"GMFolder",},
   ],
   "AudioGroups": [
     {"targets":-1,"resourceVersion":"1.3","name":"audiogroup_default","resourceType":"GMAudioGroup",},
@@ -224,7 +226,7 @@
   ],
   "IncludedFiles": [],
   "MetaData": {
-    "IDEVersion": "2022.5.1.16",
+    "IDEVersion": "2022.6.0.23",
   },
   "resourceVersion": "1.5",
   "name": "TogetherJam",
