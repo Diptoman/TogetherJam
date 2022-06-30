@@ -3,7 +3,7 @@ airwolf = instance_create_layer(72, 72, "Characters", objAirwolf);
 kitt = instance_create_layer(72, 840, "Characters", objKITT);
 viewSelector = instance_create_layer(kitt.x, kitt.y, "Controllers", objViewSelector);
 viewSelector.Initialize(airwolf, kitt);
-instance_create_layer(x, y, "Controllers", objEnemyController);
+instance_create_layer(x, y, "Controllers", objWaveController);
 
 //Timescale
 global.timescale = 1;

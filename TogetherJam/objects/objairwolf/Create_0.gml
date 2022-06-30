@@ -6,9 +6,9 @@ decelerationX = 840; //per sec
 maxSpeedX = 360; //per sec
 
 //Vertical Movement
-accelerationY = 480; //per sec
-decelerationY = 540; //per sec
-maxSpeedY = 240; //per sec
+accelerationY = 600; //per sec
+decelerationY = 750; //per sec
+maxSpeedY = 300; //per sec
 
 //Limits
 baseUpperYLimit = 40;

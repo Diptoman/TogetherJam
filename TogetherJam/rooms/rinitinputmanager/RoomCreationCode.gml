@@ -6,4 +6,5 @@
     set up in their respective objects
 */
 instance_create(0,0,InputForPlayer1);
+randomize();
 room_goto(rmMenu);

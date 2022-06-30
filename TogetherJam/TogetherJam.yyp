@@ -38,7 +38,7 @@
     {"id":{"name":"sprHeliBullet","path":"sprites/sprHeliBullet/sprHeliBullet.yy",},"order":1,},
     {"id":{"name":"__joystick_2_gamepad","path":"scripts/__joystick_2_gamepad/__joystick_2_gamepad.yy",},"order":1,},
     {"id":{"name":"sprHelipadUsed","path":"sprites/sprHelipadUsed/sprHelipadUsed.yy",},"order":4,},
-    {"id":{"name":"objEnemyController","path":"objects/objEnemyController/objEnemyController.yy",},"order":3,},
+    {"id":{"name":"objWaveController","path":"objects/objWaveController/objWaveController.yy",},"order":3,},
     {"id":{"name":"sprKITTMissileLauncher","path":"sprites/sprKITTMissileLauncher/sprKITTMissileLauncher.yy",},"order":2,},
     {"id":{"name":"fButton","path":"fonts/fButton/fButton.yy",},"order":0,},
     {"id":{"name":"objCharacterBase","path":"objects/objCharacterBase/objCharacterBase.yy",},"order":1,},
