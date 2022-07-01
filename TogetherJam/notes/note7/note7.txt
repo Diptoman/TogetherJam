@@ -1,0 +1,12 @@
+1. Balance
+2. UI - Health + Civilians, KITT Power, Airwolf Heli, Distance Travelled?
+3. Spawning issues: Correct positioning for all spawns.
+3a. Spawning civilians below ass blasters.
+3b. Civilians giving enough time for players to react.
+4. Screen shake
+5. Explosions: Players and Tremors
+6. Music
+7. SFX
+8. Menus: Game Over, Main Menu.
+9. High score system (Scoring = Distance Travelled?)
+10. Tutorial? FTE? 
