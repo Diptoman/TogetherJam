@@ -1,6 +1,7 @@
 {
   "resources": [
     {"id":{"name":"fntMain","path":"fonts/fntMain/fntMain.yy",},"order":2,},
+    {"id":{"name":"spr_Skull","path":"sprites/spr_Skull/spr_Skull.yy",},"order":8,},
     {"id":{"name":"inputdog_replay_stop_recording","path":"scripts/inputdog_replay_stop_recording/inputdog_replay_stop_recording.yy",},"order":6,},
     {"id":{"name":"sprHelipadBottom","path":"sprites/sprHelipadBottom/sprHelipadBottom.yy",},"order":5,},
     {"id":{"name":"rInitInputManager","path":"rooms/rInitInputManager/rInitInputManager.yy",},"order":3,},
@@ -107,6 +108,7 @@
     {"id":{"name":"objGraboid","path":"objects/objGraboid/objGraboid.yy",},"order":6,},
     {"id":{"name":"rExampleRoom","path":"rooms/rExampleRoom/rExampleRoom.yy",},"order":0,},
     {"id":{"name":"__global_object_depths","path":"scripts/__global_object_depths/__global_object_depths.yy",},"order":4,},
+    {"id":{"name":"spr_Score","path":"sprites/spr_Score/spr_Score.yy",},"order":9,},
     {"id":{"name":"Sprite3845","path":"sprites/Sprite3845/Sprite3845.yy",},"order":8,},
     {"id":{"name":"sprRoad","path":"sprites/sprRoad/sprRoad.yy",},"order":0,},
     {"id":{"name":"sprAirwolfBullet","path":"sprites/sprAirwolfBullet/sprAirwolfBullet.yy",},"order":1,},
