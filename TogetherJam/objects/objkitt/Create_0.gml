@@ -15,6 +15,8 @@ maxSpeedY = 240; //per sec
 //Limits
 upperYLimit = global.KITTTopMovementLimit + 16;
 lowerYLimit = global.botMovementLimit - 24;
+upperXLimit = 1880;
+lowerXLimit = 40;
 
 //Shooting
 bulletGapTime = 10;

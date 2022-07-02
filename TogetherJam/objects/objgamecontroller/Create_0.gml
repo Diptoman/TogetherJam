@@ -19,8 +19,8 @@ global.KITTTopMovementLimit = 720;
 
 instance_create_layer(x, y, "Controllers", objWaveController);
 instance_create_layer(x, y, "Controllers", objBackgroundController);
-airwolf = instance_create_layer(72, 72, "Characters", objAirwolf);
-kitt = instance_create_layer(72, 840, "Characters", objKITT);
+airwolf = instance_create_layer(160, 160, "Characters", objAirwolf);
+kitt = instance_create_layer(160, 840, "Characters", objKITT);
 viewSelector = instance_create_layer(kitt.x, kitt.y, "Controllers", objViewSelector);
 viewSelector.Initialize(airwolf, kitt);
 

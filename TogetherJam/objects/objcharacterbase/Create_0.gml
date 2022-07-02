@@ -3,8 +3,8 @@
 //Restrictions
 upperYLimit = 0;
 lowerYLimit = 1080;
-upperXLimit = 1920;
-lowerXLimit = 0;
+upperXLimit = 1900;
+lowerXLimit = 20;
 
 //Health
 hp = 100;
