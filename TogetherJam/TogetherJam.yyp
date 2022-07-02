@@ -59,6 +59,7 @@
     {"id":{"name":"sprGraboid","path":"sprites/sprGraboid/sprGraboid.yy",},"order":0,},
     {"id":{"name":"sprAirwolf","path":"sprites/sprAirwolf/sprAirwolf.yy",},"order":0,},
     {"id":{"name":"spr_SlowmoActive","path":"sprites/spr_SlowmoActive/spr_SlowmoActive.yy",},"order":6,},
+    {"id":{"name":"sprBulletExplosion","path":"sprites/sprBulletExplosion/sprBulletExplosion.yy",},"order":1,},
     {"id":{"name":"object_get_depth","path":"scripts/object_get_depth/object_get_depth.yy",},"order":0,},
     {"id":{"name":"__init_joystick","path":"scripts/__init_joystick/__init_joystick.yy",},"order":0,},
     {"id":{"name":"sprAirwolfMissile","path":"sprites/sprAirwolfMissile/sprAirwolfMissile.yy",},"order":2,},
