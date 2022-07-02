@@ -22,7 +22,12 @@ global.currenthp = global.hp;
 
 //Power and numbers
 global.power = 100;
+global.maxpower = global.power;
 global.number = 1;
+global.maxNumber = global.number;
+global.distance = 0;
+global.score = 0;
+isPlaying = true;
 
 instance_create_layer(x, y, "Controllers", objWaveController);
 instance_create_layer(x, y, "Controllers", objBackgroundController);
