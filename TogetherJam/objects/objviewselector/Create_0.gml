@@ -4,7 +4,6 @@ target = -1;
 playerSlot = 1;
 finalKITTref = -1;
 finalAirwolfRef = -1;
-finalTargetY = 0;
 cameraJumpDistance = 60;
 
 function Initialize(airwolfref, kittref, startwithkitt = true)
@@ -17,7 +16,7 @@ function Initialize(airwolfref, kittref, startwithkitt = true)
 	if (startwithkitt)
 	{
 		target = kittref;
-		finalTargetY = room_height;
+		finalTargetY = cameraJumpDistance;
 	}
 	else
 	{

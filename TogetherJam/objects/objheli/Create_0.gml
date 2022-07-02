@@ -13,6 +13,9 @@ bulletSpeed = 10;
 bulletSprite = sprHeliBullet;
 bulletDamage = 20;
 
+//HP
+hp = 1;
+
 //Temp
 image_xscale = 0.8;
 image_yscale = 0.8;
