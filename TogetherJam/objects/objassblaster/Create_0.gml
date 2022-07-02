@@ -20,7 +20,7 @@ else
 	for(i = 0; i < totalDivs; i++)
 	{
 		ds_stack_push(moveTargetX, i * room_width / totalDivs - 64);
-		ds_stack_push(moveTargetY, random_range(40, 720));
+		ds_stack_push(moveTargetY, random_range(global.topMovementLimit, global.AirwolfBotMovementLimit));
 	}
 	
 	targetX = ds_stack_pop(moveTargetX);

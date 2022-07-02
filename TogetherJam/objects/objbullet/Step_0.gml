@@ -5,3 +5,5 @@ if (x > room_width + sprite_width)
 {
 	instance_destroy();
 }
+
+image_angle = direction;

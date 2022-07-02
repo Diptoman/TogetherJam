@@ -11,8 +11,8 @@ decelerationY = 750; //per sec
 maxSpeedY = 300; //per sec
 
 //Limits
-baseUpperYLimit = 40;
-baseLowerYLimit = 480;
+baseUpperYLimit = global.topMovementLimit;
+baseLowerYLimit = global.AirwolfBotMovementLimit;
 upperYLimit = baseUpperYLimit;
 lowerYLimit = baseLowerYLimit;
 baseUpperXLimit = room_width - 40;
@@ -26,13 +26,13 @@ baseSpaceIncrement = 4;
 spaceIncrementPerRing = 2;
 baseSpace = 4;
 
-attachDistanceX = 32;
-attachDistanceY = 32;
+attachDistanceX = 60;
+attachDistanceY = 60;
 heliList = ds_list_create();
 
 //Shooting
-bulletGapTime = 12;
-bulletSpeed = 12;
+bulletGapTime = 8;
+bulletSpeed = 16;
 bulletSprite = sprAirwolfBullet;
 bulletDamage = 20;
 

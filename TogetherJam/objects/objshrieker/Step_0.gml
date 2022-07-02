@@ -1,6 +1,7 @@
 event_inherited();
 
-if (x < 0)
+if (x < -32)
 {
 	instance_destroy();
+	outOfBounds = true;
 }

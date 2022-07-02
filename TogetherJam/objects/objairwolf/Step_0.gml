@@ -39,7 +39,7 @@ if (keyboard_check_pressed(ord("X")))
 //Shoot
 if (active)
 {
-	Shoot(16, 0);
+	Shoot(24, 18);
 }
 
 //Special

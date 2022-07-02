@@ -13,11 +13,11 @@ decelerationY = 840; //per sec
 maxSpeedY = 240; //per sec
 
 //Limits
-upperYLimit = 720;
-lowerYLimit = 1040;
+upperYLimit = global.KITTTopMovementLimit + 16;
+lowerYLimit = global.botMovementLimit - 24;
 
 //Shooting
-bulletGapTime = 8;
-bulletSpeed = 16;
+bulletGapTime = 10;
+bulletSpeed = 14;
 bulletSprite = sprKITTBullet;
 bulletDamage = 32;

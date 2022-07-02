@@ -1,14 +1,17 @@
 //Create groups of shriekers
 
 instance_create_layer(x, y, "Enemies", objShrieker);
-for(i = 0; i < min(1 + global.waveDifficulty / 2 + round(random(1)), 16); i++)
+targetAmount = min(1 + floor(global.waveDifficulty / 2) + round(random(1)), 16);
+targetPow = ceil(sqrt(targetAmount));
+
+//Move the spawner away to ensure it spawns within bounds
+if (y + targetPow * 64 > global.botMovementLimit - 8)
 {
-	if (i < 8)
-	{
-		instance_create_layer(x + lengthdir_x(64, 45*i), y + lengthdir_y(48, 45*i), "Enemies", objShrieker);
-	}
-	else if (i < 16)
-	{
-		instance_create_layer(x + lengthdir_x(128, 45*i), y + lengthdir_y(96, 45*i), "Enemies", objShrieker);
-	}
+	y = global.botMovementLimit - 8 - targetPow * 64;
+}
+
+//Spawn
+for(i = 0; i < targetAmount; i++)
+{
+	instance_create_layer(x + floor(i/targetPow) * 72, y + (i mod targetPow) * 64, "Enemies", objShrieker);
 }

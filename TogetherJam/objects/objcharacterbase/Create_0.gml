@@ -18,12 +18,13 @@ currentBulletGapTime = bulletGapTime;
 bulletSprite = sprKITTBullet;
 bulletDamage = 10;
 
-function Shoot(xOffset, yOffset)
+function Shoot(xOffset, yOffset, spread = 0)
 {
+	bDepth = layer_get_depth("Characters") - 1;
 	if (currentBulletGapTime <= 0)
 	{
-		bull = instance_create_layer(x + xOffset, y + yOffset, "Characters", objBullet);
-		bull.InitializeBullet(0, bulletSpeed, bulletSprite, bulletDamage);
+		bull = instance_create_depth(x + xOffset, y + yOffset, bDepth, objBullet);
+		bull.InitializeBullet(0, bulletSpeed, bulletSprite, bulletDamage, spread);
 		currentBulletGapTime = bulletGapTime;
 	}
 }

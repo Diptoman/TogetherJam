@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "sprAirwolf",
-    "path": "sprites/sprAirwolf/sprAirwolf.yy",
+    "name": "sprHeli",
+    "path": "sprites/sprHeli/sprHeli.yy",
   },
   "solid": false,
   "visible": true,

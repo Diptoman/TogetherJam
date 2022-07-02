@@ -14,8 +14,8 @@ bulletSprite = sprHeliBullet;
 bulletDamage = 20;
 
 //Temp
-image_xscale = 0.5;
-image_yscale = 0.5;
+image_xscale = 0.8;
+image_yscale = 0.8;
 
 function SetupPosition(target, finalAttachNumber)
 {

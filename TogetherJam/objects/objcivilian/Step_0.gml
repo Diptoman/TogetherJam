@@ -8,3 +8,8 @@ if (y > room_height + 64)
 }
 
 gravity = 0.3 * global.slowmotimescale * global.timescale;
+
+if (vspeed > 8 * global.slowmotimescale * global.timescale)
+{
+	vspeed = 8 * global.slowmotimescale * global.timescale;
+}

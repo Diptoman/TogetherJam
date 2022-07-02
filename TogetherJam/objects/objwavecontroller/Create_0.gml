@@ -69,25 +69,25 @@ function PickAndSpawnEnemies(total, graboidPool, shriekerSpawnerPool, assBlaster
 		
 		if (pick == "g")
 		{
-			en = instance_create_layer(room_width + 64, random_range(720, 1080), "EnemySpawner", objGroundHole);
-			en.type = 1;
+			en = instance_create_layer(room_width + 64, random_range(global.KITTTopMovementLimit + 8, global.botMovementLimit - 8), "EnemySpawner", objGroundHole);
+			en.type = 2;
 			ds_list_add(civilianedEnemiesSpawnedLast, en);
 		}
 		else if (pick == "ss")
 		{
-			en = instance_create_layer(room_width + 64, random_range(720, 1080), "Enemies", objShriekerSpawner);
+			en = instance_create_layer(room_width + 64, random_range(global.KITTTopMovementLimit + 8, global.botMovementLimit - 8), "Enemies", objShriekerSpawner);
 			ds_list_add(civilianedEnemiesSpawnedLast, en);
 		}
 		else if (pick == "ab")
 		{
-			en = instance_create_layer(room_width + 64, random_range(40, 720), "Enemies", objAssBlaster);
+			en = instance_create_layer(room_width + 64, random_range(global.topMovementLimit, global.AirwolfBotMovementLimit), "Enemies", objAssBlaster);
 			ds_list_add(civilianedEnemiesSpawnedLast, en);
 		}
 		else if (pick == "dd")
 		{
-			en = instance_create_layer(room_width + 64, random_range(720, 1080), "EnemySpawner", objGroundHole);
+			en = instance_create_layer(room_width + 64, random_range(global.KITTTopMovementLimit + 8, global.botMovementLimit - 8), "EnemySpawner", objGroundHole);
 			ds_list_add(civilianedEnemiesSpawnedLast, en);
-			en.type = 2;
+			en.type = 1;
 		}
 	}
 	

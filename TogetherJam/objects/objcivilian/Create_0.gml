@@ -5,7 +5,8 @@ if (y > 720)
 }
 else
 {
-	hspeed = 2 * choose(1, -1); 
+	hspeed = choose(1, -1);
+	vspeed = -12;
 }
 
 gravity = 0.3;

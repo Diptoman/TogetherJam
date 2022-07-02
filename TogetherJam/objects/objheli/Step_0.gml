@@ -11,5 +11,5 @@ y = lerp(y, targetY, attachSpeed * global.timescale);
 //Shoot
 if (finalTarget.active)
 {
-	Shoot(8, 0);
+	Shoot(8, 12);
 }

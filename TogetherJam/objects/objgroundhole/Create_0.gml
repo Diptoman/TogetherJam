@@ -1,6 +1,6 @@
 type = 1;
 
-hspeed = -4;
+hspeed = global.baseRoadSpeed;
 
 image_speed = 0.05 + random(0.1);
 

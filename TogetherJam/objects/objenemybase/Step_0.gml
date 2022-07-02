@@ -13,10 +13,6 @@ if (moveType == "Scaling")
 	{
 		move_towards_point(finalX, finalY, (initialSpeed + (finalSpeed - initialSpeed) * (1 - distanceScale)) * global.slowmotimescale * global.timescale);
 	}
-	else
-	{
-		speed = 0;
-	}
 }
 else if (moveType == "Jumping")
 {

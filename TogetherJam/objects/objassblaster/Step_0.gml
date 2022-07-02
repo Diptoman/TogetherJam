@@ -1,6 +1,6 @@
 event_inherited();
 
-if ((distance_to_point(targetX, targetY) <= 14) && (type == 2))
+if ((distance_to_point(targetX, targetY) <= 0) && (type == 2))
 {
 	if (ds_stack_size(moveTargetX) > 0)
 	{
@@ -12,11 +12,13 @@ if ((distance_to_point(targetX, targetY) <= 14) && (type == 2))
 	}
 	else
 	{
+		outOfBounds = true;
 		instance_destroy();
 	}
 }
 
-if (x < 0)
+if (x < -48)
 {
+	outOfBounds = true;
 	instance_destroy();
 }

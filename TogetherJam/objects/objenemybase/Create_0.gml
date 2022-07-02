@@ -12,6 +12,7 @@ targetGravity = 0;
 canSpawnCivilians = false;
 isCivilianSpawner = false;
 damageFactor = 20;
+outOfBounds = false;
 
 //Movement functions
 function MoveToScaling(targetX, targetY, initSpeed, finSpeed)
