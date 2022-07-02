@@ -36,5 +36,5 @@ if (global.number > global.maxNumber)
 if (isPlaying)
 {
 	global.distance += 1;
-	global.score = global.distance + global.maxNumber * 100 + global.maxpower + global.civiliansaved * 100;
+	global.score = global.distance + global.maxNumber * 100 + global.maxpower + global.civiliansaved * 100 + global.creaturesKilled * 50 - global.creaturesMissed * 25;
 }

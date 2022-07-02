@@ -16,12 +16,16 @@ bulletDamage = 20;
 //HP
 hp = 1;
 
+index = 0;
+
 //Temp
 image_xscale = 0.8;
 image_yscale = 0.8;
 
 function SetupPosition(target, finalAttachNumber)
 {
+	index = finalAttachNumber - 2;
+	//show_message(index);
 	//Find out ring
 	spaceInRing = target.baseSpace;
 	targetRing = 1;

@@ -1,5 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-global.power += 100;
-instance_destroy();
+size = 0;
+//image_speed = 1;
+visible = false;

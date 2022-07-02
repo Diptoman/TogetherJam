@@ -33,10 +33,14 @@ function HandleCivilianSpawn()
 {
 	if (timeFromLastCivilian > nextCivilianTime)
 	{
-		pickedEnemy = ds_list_find_value(civilianedEnemiesSpawnedLast, floor(random(ds_list_size(civilianedEnemiesSpawnedLast))));
-		pickedEnemy.canSpawnCivilians = true;
+		if (ds_list_size(civilianedEnemiesSpawnedLast) > 0)
+		{
+			pickedEnemy = ds_list_find_value(civilianedEnemiesSpawnedLast, floor(random(ds_list_size(civilianedEnemiesSpawnedLast))));
+			pickedEnemy.isCivilianSpawner = true;
+			timeFromLastCivilian = 0;
+			nextCivilianTime = max(lowestTimeBetweenCivilians, random_range(baseMinTimeBetweenCivilians - decreaseInTimeBetweenEnemiesPerDifficulty * global.waveDifficulty, baseMaxTimeBetweenCivilians - decreaseInTimeBetweenEnemiesPerDifficulty * global.waveDifficulty)) * room_speed;
+		}
 	}
-	nextCivilianTime = max(lowestTimeBetweenCivilians, random_range(baseMinTimeBetweenCivilians - decreaseInTimeBetweenEnemiesPerDifficulty * global.waveDifficulty, baseMaxTimeBetweenCivilians - decreaseInTimeBetweenEnemiesPerDifficulty * global.waveDifficulty)) * room_speed;
 	ds_list_clear(civilianedEnemiesSpawnedLast);
 }
 
@@ -69,14 +73,13 @@ function PickAndSpawnEnemies(total, graboidPool, shriekerSpawnerPool, assBlaster
 		
 		if (pick == "g")
 		{
-			en = instance_create_layer(room_width + 64, random_range(global.KITTTopMovementLimit + 8, global.botMovementLimit - 8), "EnemySpawner", objGroundHole);
+			en = instance_create_layer(room_width + 64, random_range(global.KITTTopMovementLimit + 16, global.botMovementLimit - 8), "EnemySpawner", objGroundHole);
 			en.type = 2;
 			ds_list_add(civilianedEnemiesSpawnedLast, en);
 		}
 		else if (pick == "ss")
 		{
 			en = instance_create_layer(room_width + 64, random_range(global.KITTTopMovementLimit + 8, global.botMovementLimit - 8), "Enemies", objShriekerSpawner);
-			ds_list_add(civilianedEnemiesSpawnedLast, en);
 		}
 		else if (pick == "ab")
 		{
@@ -85,8 +88,7 @@ function PickAndSpawnEnemies(total, graboidPool, shriekerSpawnerPool, assBlaster
 		}
 		else if (pick == "dd")
 		{
-			en = instance_create_layer(room_width + 64, random_range(global.KITTTopMovementLimit + 8, global.botMovementLimit - 8), "EnemySpawner", objGroundHole);
-			ds_list_add(civilianedEnemiesSpawnedLast, en);
+			en = instance_create_layer(room_width + 64, random_range(global.KITTTopMovementLimit + 16, global.botMovementLimit - 8), "EnemySpawner", objGroundHole);
 			en.type = 1;
 		}
 	}

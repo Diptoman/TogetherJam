@@ -6,3 +6,7 @@ initY = y;
 
 image_xscale = choose(-1, 1);
 image_angle = -image_xscale * 90;
+
+explSize = 0.5;
+
+damageFactor = 10;

@@ -27,6 +27,8 @@ global.number = 1;
 global.maxNumber = global.number;
 global.distance = 0;
 global.score = 0;
+global.creaturesKilled = 0;
+global.creaturesMissed = 0;
 isPlaying = true;
 
 instance_create_layer(x, y, "Controllers", objWaveController);

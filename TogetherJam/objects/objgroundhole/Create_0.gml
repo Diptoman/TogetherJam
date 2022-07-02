@@ -1,7 +1,13 @@
 type = 1;
 
+isCivilianSpawner = false;
+
 hspeed = global.baseRoadSpeed;
 
-image_speed = 0.05 + random(0.1);
+//image_speed = 0.05 + random(0.1);
 
-alarm[0] = 60 + floor(random(180));
+spawnTime = 90 + floor(random(210));
+alarm[0] = spawnTime;
+alarm[1] = spawnTime - 60;
+alarm[2] = 1;
+canSwitch = false;

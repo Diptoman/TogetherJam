@@ -95,6 +95,7 @@
     {"id":{"name":"inputdog_analog","path":"scripts/inputdog_analog/inputdog_analog.yy",},"order":3,},
     {"id":{"name":"compatibility_report_180622_1634133413","path":"notes/compatibility_report_180622_1634133413/compatibility_report_180622_1634133413.yy",},"order":0,},
     {"id":{"name":"inputdog_add_input","path":"scripts/inputdog_add_input/inputdog_add_input.yy",},"order":2,},
+    {"id":{"name":"objEnemyExplosion","path":"objects/objEnemyExplosion/objEnemyExplosion.yy",},"order":7,},
     {"id":{"name":"Sprite3842","path":"sprites/Sprite3842/Sprite3842.yy",},"order":5,},
     {"id":{"name":"inputdog_load_default_keyboard_mapping","path":"scripts/inputdog_load_default_keyboard_mapping/inputdog_load_default_keyboard_mapping.yy",},"order":4,},
     {"id":{"name":"InputForPlayer3","path":"objects/InputForPlayer3/InputForPlayer3.yy",},"order":5,},

@@ -6,11 +6,11 @@
 
 function scr_calculate_speed_x(playerSlot, currentSpeedX, accelerationX, decelerationX, maxSpeedX, isActive)
 {
-	if (inputdog_down("right", playerSlot) && isActive)
+	if ((inputdog_down("right", playerSlot) || inputdog_down("right2", playerSlot)) && isActive)
 	{
 		currentSpeedX += accelerationX / room_speed + (sign(currentSpeedX) < 0 ? decelerationX / room_speed : 0);
 	}
-	else if (inputdog_down("left", playerSlot) && isActive)
+	else if ((inputdog_down("left", playerSlot) || inputdog_down("left2", playerSlot)) && isActive)
 	{
 		currentSpeedX -= accelerationX / room_speed + (sign(currentSpeedX) > 0 ? decelerationX / room_speed : 0);
 	}
@@ -40,11 +40,11 @@ function scr_calculate_speed_x(playerSlot, currentSpeedX, accelerationX, deceler
 
 function scr_calculate_speed_y(playerSlot, currentSpeedY, accelerationY, decelerationY, maxSpeedY, isActive)
 {
-	if (inputdog_down("up", playerSlot) && isActive)
+	if ((inputdog_down("up", playerSlot) || inputdog_down("up2", playerSlot)) && isActive)
 	{
 		currentSpeedY -= accelerationY / room_speed + (sign(currentSpeedY) > 0 ? decelerationY / room_speed : 0);
 	}
-	else if (inputdog_down("down", playerSlot) && isActive)
+	else if ((inputdog_down("down", playerSlot) || inputdog_down("down2", playerSlot)) && isActive)
 	{
 		currentSpeedY += accelerationY / room_speed + (sign(currentSpeedY) < 0 ? decelerationY / room_speed : 0);
 	}

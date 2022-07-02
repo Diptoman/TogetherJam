@@ -1,11 +1,22 @@
-if (y > 720)
+if (y > global.KITTTopMovementLimit)
 {
 	hspeed = -2;
 	vspeed = -24;
 }
 else
 {
-	hspeed = choose(1, -1);
+	if (x > 3 * room_width / 4)
+	{
+		hspeed = -3;
+	}
+	else if (x < room_width / 4)
+	{
+		hspeed = 3;
+	}
+	else
+	{
+		hspeed = -2 + random(4);
+	}
 	vspeed = -12;
 }
 
