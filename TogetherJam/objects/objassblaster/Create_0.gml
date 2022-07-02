@@ -30,5 +30,8 @@ else
 MoveToScaling(targetX, targetY, 8, currentMaxSpeed);
 currentMaxSpeed += 2;
 
-canSpawnCivilians = false;
+canSpawnCivilians = true;
 isCivilianSpawner = true;
+carriedCivilian = -1;
+
+alarm[0] = 1;

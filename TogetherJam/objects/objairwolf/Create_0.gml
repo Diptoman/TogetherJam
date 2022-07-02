@@ -15,8 +15,8 @@ baseUpperYLimit = global.topMovementLimit;
 baseLowerYLimit = global.AirwolfBotMovementLimit;
 upperYLimit = baseUpperYLimit;
 lowerYLimit = baseLowerYLimit;
-baseUpperXLimit = room_width - 40;
-baseLowerXLimit = 40;
+baseUpperXLimit = room_width - 64;
+baseLowerXLimit = 64;
 upperXLimit = baseUpperXLimit;
 lowerXLimit = baseLowerXLimit;
 

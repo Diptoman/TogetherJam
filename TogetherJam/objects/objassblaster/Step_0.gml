@@ -22,3 +22,10 @@ if (x < -48)
 	outOfBounds = true;
 	instance_destroy();
 }
+
+//Carried civ
+if (carriedCivilian != -1)
+{
+	carriedCivilian.x = x;
+	carriedCivilian.y = y + 30;
+}
