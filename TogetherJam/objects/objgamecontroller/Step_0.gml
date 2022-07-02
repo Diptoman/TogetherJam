@@ -1,5 +1,13 @@
 //Slow mo
-slowMoCooldown -= 1;
+if (slowMoCooldown > 0)
+{
+	slowMoCooldown -= 1;
+}
+else
+{
+	objSlowMoUI.Activate(true);
+}
+
 if (inputdog_down("slowmo", playerSlot))
 {
 	if (slowMoCooldown <= 0)
@@ -8,6 +16,7 @@ if (inputdog_down("slowmo", playerSlot))
 		{
 			global.slowmotimescale = 0.25;
 			alarm[0] = slowMoDuration;
+			objSlowMoUI.Activate(false);
 		}
 			
 		slowMoCooldown = 300;

@@ -9,6 +9,7 @@ playerSlot = 1;
 
 global.civiliansaved = 0;
 global.civilianmissed = 0;
+global.maxciviliansMissed = 5;
 
 global.topMovementLimit = 64;
 global.botMovementLimit = 1080;
@@ -34,4 +35,6 @@ instance_create_layer(0, camera_get_view_y(view_camera[0]), "Controllers", objUI
 function CivilianMissed()
 {
 	global.civilianmissed += 1;
+	objUIController.UpdateDeathUI(global.civilianmissed - 1);
+	instance_create_layer(x, y, "Controllers", objScreenShake);
 }

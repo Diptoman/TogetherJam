@@ -9,5 +9,4 @@ if (carriedCivilian != -1)
 {
 	with (carriedCivilian) instance_destroy();
 	carriedCivilian = -1;
-	objGameController.CivilianMissed();
 }

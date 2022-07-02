@@ -4,7 +4,7 @@
 if (y > room_height + 64)
 {
 	instance_destroy();
-	global.civilianmissed += 1;
+	objGameController.CivilianMissed();
 }
 
 gravity = 0.3 * global.slowmotimescale * global.timescale;
