@@ -41,15 +41,15 @@ global.playerName = ds_list_find_value(global.gamedata, 0);
 //Functions
 function CallEnterNameUI()
 {
-	a = instance_create_layer(room_width/2, room_height + 240, "Controllers", objEnterNameUI);
-	a.InitializeMoveUI(room_width / 2, y + camera_get_view_height(view_camera[0]) / 2);
+	a = instance_create_layer(room_width/2, room_height + 200, "Controllers", objEnterNameUI);
+	a.InitializeMoveUI(room_width / 2, y + camera_get_view_height(view_camera[0]) / 2 - 32);
 	step = 1;
 }
 
 function CallShowNameUI()
 {
-	a = instance_create_layer(room_width/2, room_height + 240, "Controllers", objDisplayNameUI);
-	a.InitializeMoveUI(room_width / 2, y + camera_get_view_height(view_camera[0]) / 2);
+	a = instance_create_layer(room_width/2, room_height + 200, "Controllers", objDisplayNameUI);
+	a.InitializeMoveUI(room_width / 2, y + camera_get_view_height(view_camera[0]) / 2 - 32);
 	step = 2;
 }
 
@@ -63,7 +63,8 @@ else
 	CallShowNameUI();
 }
 
-instance_create_layer(room_width / 2, y + 260, "Controllers", objTwinTurbo);
+instance_create_layer(room_width / 2, y + 200, "Controllers", objTwinTurbo);
+instance_create_layer(room_width / 2, y + 800, "Controllers", objControlsUI);
 
 //Browser adjustment
 /*if (os_browser == os_browser)
