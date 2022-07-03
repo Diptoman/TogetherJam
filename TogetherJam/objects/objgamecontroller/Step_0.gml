@@ -15,6 +15,7 @@ if (inputdog_down("slowmo", playerSlot))
 		if (global.slowmotimescale == 1)
 		{
 			global.slowmotimescale = 0.25;
+			instance_create_layer(x, y, "SlowMo", objSlowMoOverlay);
 			alarm[0] = slowMoDuration;
 			objSlowMoUI.Activate(false);
 		}

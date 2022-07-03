@@ -6,3 +6,4 @@ hp = 500;
 
 canSpawnCivilians = true;
 isCivilianSpawner = false;
+alarm[0] = 1;

@@ -3,3 +3,4 @@
 
 global.power += 100;
 instance_destroy();
+instance_create_layer(x, y, "UpgradeFX", objUpgradeFound);
