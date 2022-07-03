@@ -146,6 +146,7 @@
     {"id":{"name":"sndAirwolfExplosion","path":"sounds/sndAirwolfExplosion/sndAirwolfExplosion.yy",},"order":8,},
     {"id":{"name":"sprKITTBullet","path":"sprites/sprKITTBullet/sprKITTBullet.yy",},"order":3,},
     {"id":{"name":"sprKITTWheel","path":"sprites/sprKITTWheel/sprKITTWheel.yy",},"order":5,},
+    {"id":{"name":"sprGraboidWithCivActive","path":"sprites/sprGraboidWithCivActive/sprGraboidWithCivActive.yy",},"order":9,},
     {"id":{"name":"sprDirtDragonHole","path":"sprites/sprDirtDragonHole/sprDirtDragonHole.yy",},"order":5,},
     {"id":{"name":"inputdog_direction","path":"scripts/inputdog_direction/inputdog_direction.yy",},"order":4,},
     {"id":{"name":"Draw_Text_Outlined","path":"extensions/Draw_Text_Outlined/Draw_Text_Outlined.yy",},"order":0,},
