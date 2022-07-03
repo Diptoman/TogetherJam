@@ -29,5 +29,6 @@ else if (moveType == "Jumping")
 	{
 		gravity = 0;
 		vspeed = 0;
+		hspeed = 0;
 	}
 }

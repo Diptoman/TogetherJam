@@ -1,6 +1,6 @@
 event_inherited();
 
-if ((distance_to_point(targetX, targetY) <= 0) && (type == 2))
+if ((type == 2) && (distance_to_point(targetX, targetY) <= 0))
 {
 	if (ds_stack_size(moveTargetX) > 0)
 	{

@@ -1,6 +1,6 @@
 //Difficulty change
 global.waveDifficulty = 0;
-waveType = 0; //0 -> KITT, 1 -> Airwolf, 2 - > Mixed
+waveType = 1; //0 -> KITT, 1 -> Airwolf, 2 - > Mixed
 baseTimeBetweenDifficulty = 20; //s
 increaseInTimeBetweenDifficulty = 4; //s
 alarm[0] = baseTimeBetweenDifficulty * room_speed;

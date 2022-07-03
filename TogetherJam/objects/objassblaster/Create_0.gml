@@ -6,35 +6,13 @@ targetX = -64;
 
 hp = 200;
 
-type = ceil(random_range(0.01, 2));
+type = -1;
 
 initSpeed = 5;
 currentMaxSpeed = 7;
 damageFactor = 15;
 
 containsUpgrade = false;
-
-if (type == 1)
-{
-	targetY = random_range(global.topMovementLimit + 16, global.AirwolfBotMovementLimit - 64);
-}
-else
-{
-	moveTargetX = ds_stack_create();
-	moveTargetY = ds_stack_create();
-	var totalDivs = 3;
-	for(i = 0; i < totalDivs; i++)
-	{
-		ds_stack_push(moveTargetX, i * room_width / totalDivs - 64);
-		ds_stack_push(moveTargetY, random_range(global.topMovementLimit + 16, global.AirwolfBotMovementLimit - 64));
-	}
-	
-	targetX = ds_stack_pop(moveTargetX);
-	targetY = ds_stack_pop(moveTargetY);
-}
-
-MoveToScaling(targetX, targetY, initSpeed, currentMaxSpeed);
-currentMaxSpeed += .5;
 
 canSpawnCivilians = true;
 isCivilianSpawner = false;

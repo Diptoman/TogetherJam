@@ -8,3 +8,5 @@ if (!outOfBounds && !doNotCount)
 {
 	global.graboidsKilled += 1;
 }
+
+parentHole.Fade();

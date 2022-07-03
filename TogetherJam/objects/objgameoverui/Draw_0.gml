@@ -10,7 +10,7 @@ else
 }
 
 DrawUIMenuText(x, y - 240, deathText, fntMenuSmallSuper, c_black, 1, true, 4, c_white);
-global.highscore = 0;
+
 DrawUIMenuText(x, y, "Distance Travelled: " + string(global.distance) 
 + "\nMax Power: " + string(global.maxpower) 
 + "\nMax Number: " + string(global.maxNumber) 

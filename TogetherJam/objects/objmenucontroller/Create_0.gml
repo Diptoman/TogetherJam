@@ -63,6 +63,8 @@ else
 	CallShowNameUI();
 }
 
+instance_create_layer(room_width / 2, y + 260, "Controllers", objTwinTurbo);
+
 //Browser adjustment
 /*if (os_browser == os_browser)
 {
@@ -82,4 +84,4 @@ else
 }*/
 
 audio_stop_all();
-audio_play_sound(sndMenuBGM, 100, true);
+menu = audio_play_sound(sndMenuBGM, 100, true);

@@ -4,6 +4,11 @@
 // Inherit the parent event
 event_inherited();
 
+if (!audio_is_playing(menu))
+{
+	menu = audio_play_sound(sndMenuBGM, 100, true);
+}
+
 if (inputdog_down("select", playerSlot) && step == 2)
 {
 	audio_stop_all();

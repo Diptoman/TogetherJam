@@ -11,3 +11,8 @@ alarm[0] = spawnTime;
 alarm[1] = spawnTime - 60;
 alarm[2] = 1;
 canSwitch = false;
+
+function Fade()
+{
+	TweenFire(id, EaseOutQuad, TWEEN_MODE_ONCE, true, 0.2, 1, "image_alpha", 1, 0);
+}

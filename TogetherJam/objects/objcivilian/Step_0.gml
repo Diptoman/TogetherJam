@@ -25,4 +25,5 @@ if (!objGameController.isPlaying)
 {
 	gravity = 0;
 	vspeed = 0;
+	hspeed = 0;
 }
