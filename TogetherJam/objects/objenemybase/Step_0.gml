@@ -16,5 +16,18 @@ if (moveType == "Scaling")
 }
 else if (moveType == "Jumping")
 {
-	gravity = targetGravity * (global.slowmotimescale * global.timescale);
+	if (vspeed > 0)
+	{
+		gravity = targetGravity * (global.slowmotimescale * global.timescale);
+	}
+	else
+	{
+		gravity = targetGravity;
+	}
+	
+	if (!objGameController.isPlaying)
+	{
+		gravity = 0;
+		vspeed = 0;
+	}
 }

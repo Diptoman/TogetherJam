@@ -8,7 +8,7 @@ else
 	objSlowMoUI.Activate(true);
 }
 
-if (inputdog_down("slowmo", playerSlot))
+if ((inputdog_down("slowmo", playerSlot) || inputdog_down("slowmo2", playerSlot)) && isPlaying)
 {
 	if (slowMoCooldown <= 0)
 	{
@@ -42,7 +42,15 @@ if (global.number > global.maxNumber)
 if (isPlaying)
 {
 	global.distance += 1;
-	global.score = global.distance + global.maxNumber * 100 + global.maxpower + global.civiliansaved * 100 + global.creaturesKilled * 50 - global.creaturesMissed * 25;
+	global.score = global.distance 
+	+ global.maxNumber * 100 
+	+ global.maxpower 
+	+ global.civiliansaved * 100 
+	+ global.graboidsKilled * 100 
+	+ global.assBlastersKilled * 75
+	+ global.dirtdragonsKilled * 30 
+	+ global.shriekersKilled * 25 
+	- global.creaturesMissed * 50;
 }
 
 //Audio

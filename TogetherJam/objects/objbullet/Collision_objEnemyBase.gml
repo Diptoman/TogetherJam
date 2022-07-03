@@ -1,4 +1,7 @@
 /// @description Do damage
 
-other.hp -= damage;
-instance_destroy();
+if (x < room_width)
+{
+	other.hp -= damage;
+	instance_destroy();
+}

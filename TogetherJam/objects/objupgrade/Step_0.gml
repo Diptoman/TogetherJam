@@ -9,3 +9,8 @@ else
 	gravity = 0;
 	hspeed = -4 * global.slowmotimescale * global.timescale;
 }
+
+if (x < -48)
+{
+	instance_destroy();
+}

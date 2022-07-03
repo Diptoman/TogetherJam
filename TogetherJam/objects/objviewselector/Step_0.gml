@@ -8,7 +8,7 @@ if (instance_exists(target))
 	camera_set_view_pos(view_camera[0], x, cameraY);	
 }
 
-if (inputdog_pressed("switch", playerSlot) && instance_exists(finalAirwolfRef) && instance_exists(finalKITTref))
+if ((inputdog_pressed("switch", playerSlot) || inputdog_down("switch2", playerSlot)) && instance_exists(finalAirwolfRef) && instance_exists(finalKITTref) && objGameController.isPlaying)
 {
 	if (target == finalKITTref)
 	{

@@ -29,6 +29,10 @@ global.maxNumber = global.number;
 global.distance = 0;
 global.score = 0;
 global.creaturesKilled = 0;
+global.graboidsKilled = 0;
+global.assBlastersKilled = 0;
+global.dirtdragonsKilled = 0;
+global.shriekersKilled = 0;
 global.creaturesMissed = 0;
 isPlaying = true;
 
@@ -47,7 +51,9 @@ function EndGame()
 	a.InitializeMoveUI(room_width / 2, y + camera_get_view_height(view_camera[0]) / 2);
 	isPlaying = false;
 	objKITT.active = false;
+	audio_stop_sound(objKITT.kittsound);
 	objAirwolf.active = false;
+	audio_stop_sound(objAirwolf.airwolfsound);
 	audio_play_sound(sndGameOver, 95, false);
 }
 
@@ -56,6 +62,7 @@ function CivilianMissed()
 	global.civilianmissed += 1;
 	objUIController.UpdateDeathUI(global.civilianmissed - 1);
 	instance_create_layer(x, y, "Controllers", objScreenShake);
+	audio_play_sound(sndCivilianDeath, 75, false);
 	
 	if (global.civilianmissed >= 5)
 	{

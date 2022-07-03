@@ -1,5 +1,10 @@
 event_inherited();
 
+if (!outOfBounds && !doNotCount)
+{
+	global.assBlastersKilled += 1;
+}
+
 if (containsUpgrade && !outOfBounds)
 {
 	instance_create_layer(x, y, "Upgrades", objUpgrade);

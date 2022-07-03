@@ -1,6 +1,7 @@
 {
   "resources": [
     {"id":{"name":"UI","path":"scripts/UI/UI.yy",},"order":5,},
+    {"id":{"name":"sndAirwolfPowerUp","path":"sounds/sndAirwolfPowerUp/sndAirwolfPowerUp.yy",},"order":15,},
     {"id":{"name":"fntMain","path":"fonts/fntMain/fntMain.yy",},"order":2,},
     {"id":{"name":"sndBGM1","path":"sounds/sndBGM1/sndBGM1.yy",},"order":0,},
     {"id":{"name":"spr_Skull","path":"sprites/spr_Skull/spr_Skull.yy",},"order":8,},
@@ -18,6 +19,7 @@
     {"id":{"name":"objHelipad","path":"objects/objHelipad/objHelipad.yy",},"order":9,},
     {"id":{"name":"spr_NumbersBarA","path":"sprites/spr_NumbersBarA/spr_NumbersBarA.yy",},"order":3,},
     {"id":{"name":"sprHeliLanded","path":"sprites/sprHeliLanded/sprHeliLanded.yy",},"order":3,},
+    {"id":{"name":"sndCivilianDeath","path":"sounds/sndCivilianDeath/sndCivilianDeath.yy",},"order":13,},
     {"id":{"name":"inputdog_replay_file_load","path":"scripts/inputdog_replay_file_load/inputdog_replay_file_load.yy",},"order":0,},
     {"id":{"name":"sprLLRock","path":"sprites/sprLLRock/sprLLRock.yy",},"order":4,},
     {"id":{"name":"inputdog_replay_get_input_string","path":"scripts/inputdog_replay_get_input_string/inputdog_replay_get_input_string.yy",},"order":2,},
@@ -112,6 +114,7 @@
     {"id":{"name":"TGMX_Terms_of_Use","path":"notes/TGMX_Terms_of_Use/TGMX_Terms_of_Use.yy",},"order":2,},
     {"id":{"name":"sndDirtDragon","path":"sounds/sndDirtDragon/sndDirtDragon.yy",},"order":2,},
     {"id":{"name":"objAssBlaster","path":"objects/objAssBlaster/objAssBlaster.yy",},"order":1,},
+    {"id":{"name":"sndGraboidDeath","path":"sounds/sndGraboidDeath/sndGraboidDeath.yy",},"order":12,},
     {"id":{"name":"roomLLSimpleLeaderboardExample","path":"rooms/roomLLSimpleLeaderboardExample/roomLLSimpleLeaderboardExample.yy",},"order":3,},
     {"id":{"name":"roomLLRockyRunnerExample","path":"rooms/roomLLRockyRunnerExample/roomLLRockyRunnerExample.yy",},"order":5,},
     {"id":{"name":"GoToExampleRoom","path":"objects/GoToExampleRoom/GoToExampleRoom.yy",},"order":1,},
@@ -261,6 +264,7 @@
     {"id":{"name":"inputdog_replay_start_playing","path":"scripts/inputdog_replay_start_playing/inputdog_replay_start_playing.yy",},"order":3,},
     {"id":{"name":"objBulletExpl","path":"objects/objBulletExpl/objBulletExpl.yy",},"order":13,},
     {"id":{"name":"EaseFastToSlow","path":"animcurves/EaseFastToSlow/EaseFastToSlow.yy",},"order":0,},
+    {"id":{"name":"sndKITTPowerUp","path":"sounds/sndKITTPowerUp/sndKITTPowerUp.yy",},"order":14,},
     {"id":{"name":"sprHelipad","path":"sprites/sprHelipad/sprHelipad.yy",},"order":2,},
     {"id":{"name":"objLLPlayerNameSimple","path":"objects/objLLPlayerNameSimple/objLLPlayerNameSimple.yy",},"order":4,},
     {"id":{"name":"rmGame","path":"rooms/rmGame/rmGame.yy",},"order":0,},

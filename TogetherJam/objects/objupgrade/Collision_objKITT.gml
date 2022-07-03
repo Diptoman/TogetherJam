@@ -4,3 +4,4 @@
 global.power += 100;
 instance_destroy();
 instance_create_layer(x, y, "UpgradeFX", objUpgradeFound);
+audio_play_sound(sndKITTPowerUp, 70, false);
