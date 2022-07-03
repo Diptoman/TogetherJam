@@ -1,6 +1,6 @@
 /// @description Collision
 
-if (canBeHit)
+if (canBeHit && objGameController.isPlaying)
 {
 	global.currenthp -= other.damageFactor;
 	alarm[8] = 120;
@@ -13,6 +13,15 @@ if (canBeHit)
 		a.size = 0.4;
 		b = instance_create_layer(x, y, "Controllers", objScreenShake);
 		b.shakeStr = 12;
+	}
+	else
+	{
+		a = instance_create_layer(x, y, "Characters", objExplosion);
+		a.size = .8;
+		b = instance_create_layer(x, y, "Controllers", objScreenShake);
+		b.shakeStr = 20;
+		
+		objGameController.EndGame();
 	}
 
 }

@@ -3,6 +3,9 @@
 
 //Loot Locker
 LootLockerInitialize("64669fa3c7f23c6e3105f62d3b5b972504e0b82b", "1.0.0", false, 4490);
+LootLockerTurnOnAutoRefresh();
+
+alarm[0] = 60;
 
 //State 
 step = 1;
@@ -23,7 +26,8 @@ else
 
 if (ds_list_size(global.gamedata) == 0)
 {
-	ds_list_add(global.gamedata, "", 0);
+	ds_list_add(global.gamedata, "");
+	ds_list_add(global.gamedata, 0);
 	data = file_text_open_write("GameData.tt");
 	file_text_write_string(data, ds_list_write(global.gamedata));
 	file_text_close(data);

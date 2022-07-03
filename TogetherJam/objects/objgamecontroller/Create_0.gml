@@ -1,5 +1,6 @@
 /// @description Init
-
+LootLockerInitialize("64669fa3c7f23c6e3105f62d3b5b972504e0b82b", "1.0.0", false, 4490);
+alarm[1] = 60;
 //Timescale
 global.timescale = 1;
 global.slowmotimescale = 1;
@@ -39,9 +40,24 @@ viewSelector = instance_create_layer(kitt.x, kitt.y, "Controllers", objViewSelec
 viewSelector.Initialize(airwolf, kitt);
 instance_create_layer(0, camera_get_view_y(view_camera[0]), "Controllers", objUIController);
 
+function EndGame()
+{
+	global.timescale = 0;
+	a = instance_create_layer(room_width/2, room_height + 240, "Controllers", objGameOverUI);
+	a.InitializeMoveUI(room_width / 2, y + camera_get_view_height(view_camera[0]) / 2);
+	isPlaying = false;
+	objKITT.active = false;
+	objAirwolf.active = false;
+}
+
 function CivilianMissed()
 {
 	global.civilianmissed += 1;
 	objUIController.UpdateDeathUI(global.civilianmissed - 1);
 	instance_create_layer(x, y, "Controllers", objScreenShake);
+	
+	if (global.civilianmissed >= 5)
+	{
+		EndGame();
+	}
 }
