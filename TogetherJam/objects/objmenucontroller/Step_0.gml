@@ -11,6 +11,11 @@ if (!audio_is_playing(menu))
 
 if (inputdog_down("select", playerSlot) && step == 2)
 {
+	alarm[1] = 5;
+}
+
+if (inputdog_down("select", playerSlot) && step == 3)
+{
 	audio_stop_all();
 	global.bgm = audio_play_sound(choose(sndBGM1, sndBGM2, sndBGM3), 100, false);
 	room_goto(rmGame);

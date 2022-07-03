@@ -64,7 +64,6 @@ else
 }
 
 instance_create_layer(room_width / 2, y + 200, "Controllers", objTwinTurbo);
-instance_create_layer(room_width / 2, y + 800, "Controllers", objControlsUI);
 
 //Browser adjustment
 /*if (os_browser == os_browser)

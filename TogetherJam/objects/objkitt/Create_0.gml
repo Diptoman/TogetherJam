@@ -25,3 +25,5 @@ bulletSprite = sprKITTBullet;
 bulletDamage = 32;
 
 kittsound = audio_play_sound(sndKITT, 90, true);
+
+instance_create_layer(x - 45, y - 10, "UpgradeFX", objDirt);

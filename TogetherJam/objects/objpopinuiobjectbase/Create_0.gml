@@ -21,4 +21,5 @@ function EndMoveUI()
 {
 	TweenFire(id, EaseOutQuad, TWEEN_MODE_ONCE, true, 0, 0.25, "x", x, x - 64);
 	TweenFire(id, EaseOutQuad, TWEEN_MODE_ONCE, true, 0.25, 0.5, "x", x - 64, room_width + 720);
+	alarm[9] = room_speed * .75;
 }

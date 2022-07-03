@@ -1,17 +1,14 @@
 {
   "spriteId": {
-    "name": "sprControls",
-    "path": "sprites/sprControls/sprControls.yy",
+    "name": "sprDirt",
+    "path": "sprites/sprDirt/sprDirt.yy",
   },
   "solid": false,
   "visible": true,
   "managed": true,
   "spriteMaskId": null,
   "persistent": false,
-  "parentObjectId": {
-    "name": "objPopInUIObjectBase",
-    "path": "objects/objPopInUIObjectBase/objPopInUIObjectBase.yy",
-  },
+  "parentObjectId": null,
   "physicsObject": false,
   "physicsSensor": false,
   "physicsShape": 1,
@@ -24,15 +21,17 @@
   "physicsStartAwake": true,
   "physicsKinematic": false,
   "physicsShapePoints": [],
-  "eventList": [],
+  "eventList": [
+    {"isDnD":false,"eventNum":0,"eventType":3,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+  ],
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "UI",
-    "path": "folders/Objects/UI.yy",
+    "name": "Characters",
+    "path": "folders/Objects/Characters.yy",
   },
   "resourceVersion": "1.0",
-  "name": "objControlsUI",
+  "name": "objDirt",
   "tags": [],
   "resourceType": "GMObject",
 }
