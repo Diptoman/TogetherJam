@@ -10,3 +10,9 @@ if (carriedCivilian != -1)
 	with (carriedCivilian) instance_destroy();
 	carriedCivilian = -1;
 }
+
+if (carriedUpgrade != -1)
+{
+	with (carriedUpgrade) instance_destroy();
+	carriedUpgrade = -1;
+}

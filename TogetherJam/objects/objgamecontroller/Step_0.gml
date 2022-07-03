@@ -24,6 +24,11 @@ if (inputdog_down("slowmo", playerSlot))
 	}
 }
 
+if (inputdog_down("escape", playerSlot))
+{
+	alarm[2] = 5;
+}
+
 if (global.power > global.maxpower)
 {
 	global.maxpower = global.power;
@@ -38,4 +43,10 @@ if (isPlaying)
 {
 	global.distance += 1;
 	global.score = global.distance + global.maxNumber * 100 + global.maxpower + global.civiliansaved * 100 + global.creaturesKilled * 50 - global.creaturesMissed * 25;
+}
+
+//Audio
+if (!audio_is_playing(global.bgm))
+{
+	global.bgm = audio_play_sound(choose(sndBGM1, sndBGM2, sndBGM3), 100, false);
 }

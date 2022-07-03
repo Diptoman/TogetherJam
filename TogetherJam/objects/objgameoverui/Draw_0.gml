@@ -14,5 +14,5 @@ if (global.score > global.highscore)
 DrawUIMenuText(x - 580, y - 256, "GLOBAL TOP SCORES", fntMenuSmall, c_black, 1, true, 4, c_white);
 DrawUIMenuTextTop(x - 580, y - 224, LLHighscoresTopFormatted(), fntMenuSmallSuper, c_black, 1);
 
-DrawUIMenuText(x + 580, y - 256, "CENTRED GLOBAL SCORES", fntMenuSmall, c_black, 1, true, 4, c_white);
+DrawUIMenuText(x + 580, y - 256, "CURRENT RANK", fntMenuSmall, c_black, 1, true, 4, c_white);
 DrawUIMenuTextTop(x + 580, y - 224, LLHighscoresCenteredFormatted(), fntMenuSmallSuper, c_black, 1);

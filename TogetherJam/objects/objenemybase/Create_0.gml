@@ -14,6 +14,7 @@ isCivilianSpawner = false;
 damageFactor = 20;
 outOfBounds = false;
 explSize = 1;
+doNotCount = false;
 
 //Movement functions
 function MoveToScaling(targetX, targetY, initSpeed, finSpeed)

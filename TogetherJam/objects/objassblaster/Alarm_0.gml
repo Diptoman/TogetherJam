@@ -5,3 +5,8 @@ if (isCivilianSpawner)
 {
 	carriedCivilian = instance_create_depth(x, y + 30, layer_get_depth("Enemies") + 1, objCarriedCivilian);
 }
+
+if (containsUpgrade)
+{
+	carriedUpgrade = instance_create_depth(x, y + 30, layer_get_depth("Enemies") + 1, objCarriedUpgrade);
+}

@@ -23,3 +23,5 @@ bulletGapTime = 10;
 bulletSpeed = 14;
 bulletSprite = sprKITTBullet;
 bulletDamage = 32;
+
+kittsound = audio_play_sound(sndKITT, 90, true);

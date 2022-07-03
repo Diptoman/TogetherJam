@@ -6,7 +6,7 @@ targetX = -64;
 
 hp = 200;
 
-type = ceil(random_range(0, 2));
+type = ceil(random_range(0.01, 2));
 
 initSpeed = 5;
 currentMaxSpeed = 7;
@@ -16,7 +16,7 @@ containsUpgrade = false;
 
 if (type == 1)
 {
-	targetY = random_range(40, 720);
+	targetY = random_range(global.topMovementLimit + 16, global.AirwolfBotMovementLimit - 64);
 }
 else
 {
@@ -26,7 +26,7 @@ else
 	for(i = 0; i < totalDivs; i++)
 	{
 		ds_stack_push(moveTargetX, i * room_width / totalDivs - 64);
-		ds_stack_push(moveTargetY, random_range(global.topMovementLimit + 16, global.AirwolfBotMovementLimit - 32));
+		ds_stack_push(moveTargetY, random_range(global.topMovementLimit + 16, global.AirwolfBotMovementLimit - 64));
 	}
 	
 	targetX = ds_stack_pop(moveTargetX);
@@ -34,10 +34,13 @@ else
 }
 
 MoveToScaling(targetX, targetY, initSpeed, currentMaxSpeed);
-currentMaxSpeed += 1;
+currentMaxSpeed += .5;
 
 canSpawnCivilians = true;
 isCivilianSpawner = false;
 carriedCivilian = -1;
+carriedUpgrade = -1;
 
 alarm[0] = 1;
+
+audio_play_sound(sndAssBlaster, 50, false);

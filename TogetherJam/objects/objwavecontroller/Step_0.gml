@@ -1,2 +1,5 @@
 //Civilian Timer
-timeFromLastCivilian += 1;
+if (objGameController.isPlaying)
+{
+	timeFromLastCivilian += 1;
+}

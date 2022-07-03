@@ -10,3 +10,5 @@ image_angle = -image_xscale * 90;
 explSize = 0.5;
 
 damageFactor = 10;
+
+audio_play_sound(sndDirtDragon, 50, false);

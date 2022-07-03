@@ -14,11 +14,15 @@ if (inputdog_pressed("switch", playerSlot) && instance_exists(finalAirwolfRef) &
 	{
 		target = finalAirwolfRef;
 		finalTargetY = 0;
+		audio_sound_gain(finalAirwolfRef.airwolfsound, 1, 200);
+		audio_sound_gain(finalKITTref.kittsound, 0.25, 200);
 	}
 	else
 	{
 		target = finalKITTref;
 		finalTargetY = cameraJumpDistance;
+		audio_sound_gain(finalAirwolfRef.airwolfsound, 0.25, 200);
+		audio_sound_gain(finalKITTref.kittsound, 1, 200);
 	}
 	
 	finalAirwolfRef.active = !finalAirwolfRef.active;

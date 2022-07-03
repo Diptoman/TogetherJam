@@ -48,6 +48,7 @@ function EndGame()
 	isPlaying = false;
 	objKITT.active = false;
 	objAirwolf.active = false;
+	audio_play_sound(sndGameOver, 95, false);
 }
 
 function CivilianMissed()

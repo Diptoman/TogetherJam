@@ -5,7 +5,14 @@ if (!outOfBounds)
 {
 	a = instance_create_layer(x, y, "Enemies", objEnemyExplosion);
 	a.size = explSize;
-	global.creaturesKilled += 1;
+	if (!doNotCount)
+	{
+		global.creaturesKilled += 1;
+	}
+	else
+	{
+		global.creaturesMissed += 1;
+	}
 }
 else
 {

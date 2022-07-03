@@ -4,7 +4,14 @@
 // Inherit the parent event
 event_inherited();
 
-if ((keyboard_check_pressed(vk_enter) || keyboard_check_pressed(vk_space)) && step == 2)
+if (inputdog_down("select", playerSlot) && step == 2)
 {
+	audio_stop_all();
+	global.bgm = audio_play_sound(choose(sndBGM1, sndBGM2, sndBGM3), 100, false);
 	room_goto(rmGame);
+}
+
+if (inputdog_down("escape", playerSlot))
+{
+	game_end();
 }

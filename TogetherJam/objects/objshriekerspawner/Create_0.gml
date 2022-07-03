@@ -15,3 +15,5 @@ for(i = 0; i < targetAmount; i++)
 {
 	instance_create_layer(x + floor(i/targetPow) * 72, y + (i mod targetPow) * 64, "Enemies", objShrieker);
 }
+
+audio_play_sound(sndShrieker, 50, false);

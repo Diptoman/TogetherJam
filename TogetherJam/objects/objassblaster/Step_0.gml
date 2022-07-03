@@ -7,7 +7,7 @@ if ((distance_to_point(targetX, targetY) <= 0) && (type == 2))
 		targetX = ds_stack_pop(moveTargetX);
 		targetY = ds_stack_pop(moveTargetY);
 
-		MoveToScaling(targetX, targetY, currentMaxSpeed, currentMaxSpeed + 2);
+		MoveToScaling(targetX, targetY, currentMaxSpeed, currentMaxSpeed + .5);
 		currentMaxSpeed += 2;
 	}
 	else
@@ -28,4 +28,11 @@ if (carriedCivilian != -1)
 {
 	carriedCivilian.x = x;
 	carriedCivilian.y = y + 30;
+}
+
+//Carried civ
+if (carriedUpgrade != -1)
+{
+	carriedUpgrade.x = x;
+	carriedUpgrade.y = y + 30;
 }

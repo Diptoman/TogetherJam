@@ -1,6 +1,8 @@
 /// @description Insert description here
 // You can write your code in this editor
 
+playerSlot = 1;
+
 //Loot Locker
 LootLockerInitialize("64669fa3c7f23c6e3105f62d3b5b972504e0b82b", "1.0.0", false, 4490);
 LootLockerTurnOnAutoRefresh();
@@ -78,3 +80,6 @@ else
 		window_set_size(a, b);
 	}
 }*/
+
+audio_stop_all();
+audio_play_sound(sndMenuBGM, 100, true);

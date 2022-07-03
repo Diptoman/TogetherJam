@@ -1,0 +1,1 @@
+audio_play_sound(sndBulletHit, 15, false);

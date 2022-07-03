@@ -13,3 +13,5 @@ inputdog_add_input("down2",   ord("S"),    inputdog_gp_left_stick_down);
 inputdog_add_input("switch2",   ord("J"),   gp_face3);
 inputdog_add_input("slowmo2",  ord("K"),   gp_shoulderrb);
 
+inputdog_add_input("escape", vk_escape, gp_select);
+inputdog_add_input("select", vk_enter, gp_face1);

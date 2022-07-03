@@ -1,4 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-instance_create(x, y, objBulletExpl);
+if (x < room_width)
+{
+	instance_create(x, y, objBulletExpl);
+}

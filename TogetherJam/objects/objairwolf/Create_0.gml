@@ -58,3 +58,6 @@ function UpdateScreenLimits()
 		lowerXLimit = baseLowerXLimit + ring * attachDistanceX;
 	}
 }
+
+airwolfsound = audio_play_sound(sndAirWolf, 90, true);
+audio_sound_gain(airwolfsound, 0.45, 1);
