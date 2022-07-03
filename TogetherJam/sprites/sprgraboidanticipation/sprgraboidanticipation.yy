@@ -55,7 +55,7 @@
     "backdropXOffset": 0.0,
     "backdropYOffset": 0.0,
     "xorigin": 81,
-    "yorigin": 30,
+    "yorigin": 31,
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sprGraboidAnticipation","path":"sprites/sprGraboidAnticipation/sprGraboidAnticipation.yy",},

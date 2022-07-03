@@ -9,6 +9,6 @@ if (objGameController.isPlaying)
 	{
 		a = instance_create_layer(x, y, "Enemies", objGraboid);
 		a.isCivilianSpawner = isCivilianSpawner;
-		instance_destroy();
+		sprite_index = sprDirtDragonHole;
 	}
 }
