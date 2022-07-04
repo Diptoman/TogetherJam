@@ -1,5 +1,7 @@
 event_inherited();
 
+hp = 70;
+
 explSize = 0.4;
 
 targetX = -64;

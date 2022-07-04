@@ -11,4 +11,5 @@ else if (step == 3)
 	DrawUIMenuText(room_width / 2, room_height / 2 + 100, "Enter/GP (A) to begin game!", fntMenuSmall, c_black, 1, true, 2, c_white);
 }
 
-DrawUIMenuText(room_width / 2, room_height / 2 + 550, "Made for Together Jam by Diptoman Mukherjee (programming), Pranjal Bisht (Art) and Djoel Montpetit (Audio).", fntMenuSmallSuper, c_black, 1);
+DrawUIMenuText(room_width / 2, room_height / 2 + 530, "Made for Together Jam by Diptoman Mukherjee (programming), Pranjal Bisht (Art) and Djoel Montpetit (Audio).", fntMenuSmallSuper, c_black, 1);
+DrawUIMenuText(room_width / 2, room_height / 2 + 555, "Leaderboards powered by Loot Locker!", fntMenuTiny, c_black, 1);
